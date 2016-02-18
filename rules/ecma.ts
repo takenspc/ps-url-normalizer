@@ -9,6 +9,9 @@ export function normalize(url: Url, changed: boolean): string {
     const host = url.host;
     const pathname = url.pathname;
 
+    // XXX https://es5.github.io/
+    // XXX https://tc39.github.io/ecma262/
+
     if (host === 'people.mozilla.org') {
         if (pathname === '/~jorendorff/es6-draft.html') {
             return redirect(url, {
