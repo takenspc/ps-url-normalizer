@@ -14,7 +14,7 @@ export function normalize(url: Url, changed: boolean): string {
     const pathname = url.pathname;
 
     if (host === 'www.ietf.org' || host === 'tools.ietf.org') {
-        const matchObject = /^\/(?:rfc|id|html)\/([a-zA-Z0-9-]+)(?:\.txt)?$/.exec(pathname);
+        const matchObject = /^\/(?:rfc|internet-drafts|id|html)\/([a-zA-Z0-9-]+)(?:\.txt)?$/.exec(pathname);
 
         if (matchObject) {
             return redirect(url, {
