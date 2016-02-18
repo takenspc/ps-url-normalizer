@@ -17,6 +17,17 @@ describe('ecma', () => {
 
         for (let i = 0; i < oldURLs.length; i++) {
             const actual = ecma.normalize(url.parse(oldURLs[i]), true);
+
+    it('should normalize urls of ECMA-262 6.0 draft', () => {
+        const urls = [
+            'http://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects',
+            'https://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects',
+        ];
+
+        const expected = 'http://www.ecma-international.org/ecma-262/6.0/#sec-promise-objects';
+
+        for (let i = 0; i < urls.length; i++) {
+            const actual = ecma.normalize(url.parse(urls[i]), true);
             assert(actual === expected);
         }
     });

@@ -3,11 +3,21 @@ import { Url } from 'url';
 import { redirect } from './';
 
 
-export const hosts: string[] = ['.ecma-international.org'];
+export const hosts: string[] = ['.ecma-international.org', 'people.mozilla.org'];
 
 export function normalize(url: Url, changed: boolean): string {
     const host = url.host;
     const path = url.pathname;
+
+    if (host === 'people.mozilla.org') {
+        if (path === '/~jorendorff/es6-draft.html') {
+            return redirect(url, {
+                protocol: 'http:',
+                host: 'www.ecma-international.org',
+                pathname: '/ecma-262/6.0/',
+            });
+        }
+    }
 
     if (host === 'ecma-international.org') {
         return redirect(url, {
