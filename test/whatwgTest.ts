@@ -21,7 +21,7 @@ describe('whatwg', () => {
             'https://html.spec.whatwg.org/#imagebitmapfactories',
             'https://developers.whatwg.org/states-of-the-type-attribute.html#attr-input-accept',
         ];
-        
+
         const normalizedURLs = [
             'https://html.spec.whatwg.org/multipage/browsers.html#applicationcache',
             'https://html.spec.whatwg.org/multipage/scripting.html#2dcontext',
