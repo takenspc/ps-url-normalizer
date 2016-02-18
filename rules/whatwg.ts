@@ -2,49 +2,39 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { Url } from 'url';
-
-//
-// Protocol
-//
-function normalieProtocol(protocol: string): string {
-    // whatwg.org use 'https:'
-    return 'https:';
-}
-
+import { redirect, RedirectInfo } from './';
 
 //
 // Normalize HTML Standard
 //
 const HTML_FRAGMENT_DATA_PATH: string = path.join(__dirname, 'fragment-links.json');
 const HTML_FRAGMENT_DATA: any = JSON.parse(fs.readFileSync(HTML_FRAGMENT_DATA_PATH, 'utf-8'));
-function normalizeHTMLFragment(fragment: string): string {
-    if (!fragment) {
-        return '';
+function normalizeHTML(hash: string): RedirectInfo {
+    if (!hash) {
+        return {
+            pathname: '/multipage/',
+        };
     }
 
-    const index = fragment.substring(1);
-    if (HTML_FRAGMENT_DATA.hasOwnProperty(index)) {
-        return HTML_FRAGMENT_DATA[index] + '.html' + fragment;
+    const id = hash.substring(1);
+    if (HTML_FRAGMENT_DATA.hasOwnProperty(id)) {
+        return {
+            pathname: /multipage/ + HTML_FRAGMENT_DATA[id] + '.html',
+            hash: hash,
+        };
     }
 
-    throw new Error('Unknown fragment ' + fragment);
+    throw new Error('Unknown hash ' + hash);
 }
-
-function normalizeHTML(fragment: string): string {
-    return 'html.spec.whatwg.org/multipage/' + normalizeHTMLFragment(fragment);
-}
-
 
 //
 // Normalize
 //
-function redirect(url: Url, host: string, pathname: string): string {
-    url.host = host;
-    url.pathname = pathname;
-    return normalizeHostAndPath(url);
-}
-
-function normalizeHostAndPath(url: Url): string {
+export function normalize(url: Url, changed: boolean): string {
+    if (url.protocol === 'http:') {
+        return redirect(url, { protocol: 'https:' });
+    }
+    
     const htmlHostPathMap = new Map<string, string[]>([
         ['whatwg.org', [
             '/html',
@@ -61,6 +51,7 @@ function normalizeHostAndPath(url: Url): string {
 
     const host = url.host;
     const path = url.pathname;
+
     for (const pair of htmlHostPathMap) {
         const expectedHost = pair[0];
         if (expectedHost !== host) {
@@ -71,33 +62,26 @@ function normalizeHostAndPath(url: Url): string {
             if (expectedPath.endsWith('*')) {
                 const pathPrefix = expectedPath.substring(0, expectedPath.length - 1);
                 if (path.startsWith(pathPrefix)) {
-                    return redirect(url, 'html.spec.whatwg.org', '/multipage/');
+                    return redirect(url, {
+                        host: 'html.spec.whatwg.org',
+                        pathname: '/multipage/',
+                    });
                 }
             } else {
                 if (expectedPath === path) {
-                    return redirect(url, 'html.spec.whatwg.org', '/multipage/');
+                    return redirect(url, {
+                        host: 'html.spec.whatwg.org',
+                        pathname: '/multipage/',
+                    });
                 }
             }
         }
     }
 
-    // url.hash can be `null`
-    const fragment = url.hash || '';
     if (host === 'html.spec.whatwg.org' && path.startsWith('/multipage/')) {
-        return normalizeHTML(fragment);
+        const redirectInfo = normalizeHTML(url.hash);
+        return redirect(url, redirectInfo)
     }
 
-    return host + path + fragment;
-}
-
-
-//
-// Entry point
-//
-export function normalize(url: Url): string {
-
-    const protocol = normalieProtocol(url.protocol);
-    const hostAndPath = normalizeHostAndPath(url);
-
-    return `${protocol}//${hostAndPath}`;
+    return redirect(url, {});
 }

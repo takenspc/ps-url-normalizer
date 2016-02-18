@@ -7,7 +7,7 @@ import * as whatwg from '../rules/whatwg';
 describe('whatwg', () => {
     it('should normalize protocol', () => {
         const httpURL = 'http://dom.spec.whatwg.org/';
-        const actual = whatwg.normalize(url.parse(httpURL));
+        const actual = whatwg.normalize(url.parse(httpURL), true);
         const expected = 'https://dom.spec.whatwg.org/';
         assert(actual === expected);
     });
@@ -30,7 +30,7 @@ describe('whatwg', () => {
         ];
 
         for (let i = 0; i < oldURLs.length; i++) {
-            const actual = whatwg.normalize(url.parse(oldURLs[i]));
+            const actual = whatwg.normalize(url.parse(oldURLs[i]), true);
             const expected = normalizedURLs[i];
             assert(actual === expected);
         }
