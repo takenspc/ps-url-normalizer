@@ -1,7 +1,7 @@
 {
   "name": "ps-url-normalizer",
   "version": "0.0.0",
-  "description": "Normalize urls of specifications",
+  "description": "Normalize urls of specifications which works offline",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
