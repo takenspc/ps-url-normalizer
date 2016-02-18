@@ -57,7 +57,7 @@ export function normalize(url: Url, changed: boolean): string {
     ]);
 
     const host = url.host;
-    const path = url.pathname;
+    const pathname = url.pathname;
 
     for (const pair of htmlHostPathMap) {
         const expectedHost = pair[0];
@@ -68,14 +68,14 @@ export function normalize(url: Url, changed: boolean): string {
         for (const expectedPath of pair[1]) {
             if (expectedPath.endsWith('*')) {
                 const pathPrefix = expectedPath.substring(0, expectedPath.length - 1);
-                if (path.startsWith(pathPrefix)) {
+                if (pathname.startsWith(pathPrefix)) {
                     return redirect(url, {
                         host: 'html.spec.whatwg.org',
                         pathname: '/multipage/',
                     });
                 }
             } else {
-                if (expectedPath === path) {
+                if (expectedPath === pathname) {
                     return redirect(url, {
                         host: 'html.spec.whatwg.org',
                         pathname: '/multipage/',
@@ -85,7 +85,7 @@ export function normalize(url: Url, changed: boolean): string {
         }
     }
 
-    if (host === 'html.spec.whatwg.org' && path.startsWith('/multipage/')) {
+    if (host === 'html.spec.whatwg.org' && pathname.startsWith('/multipage/')) {
         const redirectInfo = normalizeHTML(url.hash);
         return redirect(url, redirectInfo)
     }
