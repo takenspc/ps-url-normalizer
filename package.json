@@ -4,6 +4,7 @@
   "description": "Normalize urls of specifications",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "mocha"
   },
   "keywords": [],
