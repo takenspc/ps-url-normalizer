@@ -4,12 +4,15 @@
   "description": "Normalize urls of specifications",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "Takeshi Kurosawa <taken.spc@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "espower-typescript": "^4.0.1",
+    "mocha": "^2.4.5",
+    "power-assert": "^1.2.0",
     "typescript": "^1.7.5"
   }
 }
