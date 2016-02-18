@@ -4,6 +4,7 @@ import * as path from 'path';
 import { Url } from 'url';
 import { redirect, RedirectInfo } from './';
 
+
 //
 // Normalize HTML Standard
 //
@@ -27,14 +28,17 @@ function normalizeHTML(hash: string): RedirectInfo {
     throw new Error('Unknown hash ' + hash);
 }
 
+
 //
 // Normalize
 //
+export const hosts: string[] = ['.whatwg.org'];
+
 export function normalize(url: Url, changed: boolean): string {
     if (url.protocol === 'http:') {
         return redirect(url, { protocol: 'https:' });
     }
-    
+
     const htmlHostPathMap = new Map<string, string[]>([
         ['whatwg.org', [
             '/html',

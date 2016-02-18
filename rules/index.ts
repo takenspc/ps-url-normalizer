@@ -26,19 +26,18 @@ export function redirect(url: Url, redirectInfo: RedirectInfo): string {
 }
 
 export function normalize(url: Url, changed: boolean): string {
-    const protocol = url.protocol;
-    const host = url.host;
-    const pathname = url.pathname;
-    const hash = url.hash || '';
-
     if (changed) {
-        const hostWithDot = '.' + host;
-        if (hostWithDot.endsWith('.whatwg.org')) {
-            return whatwg.normalize(url, changed);
-        } else if (hostWithDot.endsWith('.ecma-international.org')) {
-            return ecma.normalize(url, changed);
+        const hostWithDot = '.' + url.host;
+
+        const modules = [whatwg, ecma];
+        for (const module of modules) {
+            for (const host of module.hosts) {
+                if (hostWithDot.endsWith(host)) {
+                    return module.normalize(url, changed);
+                }
+            }
         }
     }
 
-    return `${protocol}//${host}${pathname}${hash}`;
+    return `${url.protocol}//${url.host}${url.pathname}${url.hash || ''}`;
 }

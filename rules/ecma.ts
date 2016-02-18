@@ -3,6 +3,8 @@ import { Url } from 'url';
 import { redirect } from './';
 
 
+export const hosts: string[] = ['.ecma-international.org'];
+
 export function normalize(url: Url, changed: boolean): string {
     const host = url.host;
     const path = url.pathname;
@@ -13,7 +15,7 @@ export function normalize(url: Url, changed: boolean): string {
             host: 'www.ecma-international.org'
         });
     }
-    
+
     if (host === 'www.ecma-international.org') {
         // ECMA 262 - ECMAScript Language Specification
         if (path === '/ecma-262/5.1/index.html') {
