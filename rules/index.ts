@@ -2,6 +2,7 @@
 import { Url } from 'url';
 import * as whatwg from './whatwg';
 import * as ecma from './ecma';
+import * as ietf from './ietf';
 
 
 export interface RedirectInfo {
@@ -29,7 +30,7 @@ export function normalize(url: Url, changed: boolean): string {
     if (changed) {
         const hostWithDot = '.' + url.host;
 
-        const modules = [whatwg, ecma];
+        const modules = [whatwg, ecma, ietf];
         for (const module of modules) {
             for (const host of module.hosts) {
                 if (hostWithDot.endsWith(host)) {
