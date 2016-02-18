@@ -44,6 +44,9 @@ export function normalize(url: Url, changed: boolean): string {
             '/specs/web-apps/current-work/',
             '/specs/web-apps/current-work/multipage/*'
         ]],
+        ['developers.whatwg.org', [
+            '/*',
+        ]],
         ['html.spec.whatwg.org', [
             '/',
         ]],
