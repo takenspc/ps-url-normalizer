@@ -13,6 +13,17 @@ export interface RedirectInfo {
     hash?: string
 }
 
+const HTTPS_HOSTS = [
+    '.chromium.org',
+    '.github.com',
+    '.github.io',
+    '.khronos.org',
+    '.opus-codec.org',
+    '.w3.org',
+    '.xiph.org',
+];
+
+
 function redirect(url: Url, redirectInfo: RedirectInfo): boolean {
     let changed = false;
     const keys = ['protocol', 'host', 'pathname', 'hash'];
@@ -32,6 +43,16 @@ export function normalize(url: Url): string {
 
     while (canRedirect) {
         const hostWithDot = '.' + url.host;
+        
+        // XXX USE HTST lists
+        for (const httpsHost of HTTPS_HOSTS) {
+            if (hostWithDot.endsWith(httpsHost)) {
+                const redirectInfo = { protocol: 'https:' };
+                canRedirect = redirect(url, redirectInfo);
+                break;
+            }
+        }
+
 
         const redirecters = [whatwg, ecma, ietf, mozilla];
         for (const redirecter of redirecters) {
