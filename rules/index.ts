@@ -39,9 +39,8 @@ function redirect(url: Url, redirectInfo: RedirectInfo): boolean {
 }
 
 export function normalize(url: Url): string {
-    let canRedirect = true;
-
-    while (canRedirect) {
+    let canRedirect = false;
+    do {
         const hostWithDot = '.' + url.host;
         
         // XXX USE HTST lists
@@ -61,7 +60,7 @@ export function normalize(url: Url): string {
                 canRedirect = redirect(url, redirectInfo);
             }
         }
-    }
+    } while (canRedirect);
 
     return `${url.protocol}//${url.host}${url.pathname}${url.hash || ''}`;
 }
