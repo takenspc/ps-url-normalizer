@@ -1,13 +1,13 @@
 'use strict'; // XXX
 import { Url } from 'url';
-import { redirect } from './';
+import { RedirectInfo } from './';
 
 
-export const hosts: string[] = ['.ietf.org'];
+export const host: string = '.ietf.org';
 
-export function normalize(url: Url, changed: boolean): string {
+export function normalize(url: Url): RedirectInfo {
     if (url.protocol === 'http:') {
-        return redirect(url, { protocol: 'https:' });
+        return { protocol: 'https:' };
     }
 
     const host = url.host;
@@ -19,15 +19,16 @@ export function normalize(url: Url, changed: boolean): string {
     // https://www.ietf.org/id/all_id2.txt ?
 
     if (host === 'www.ietf.org' || host === 'tools.ietf.org') {
-        const matchObject = /^\/(?:rfc|internet-drafts|id|html)\/([a-zA-Z0-9-]+)(?:\.txt)?$/.exec(pathname);
+        const pattern = /^\/(?:rfc|internet-drafts|id|html)\/([a-zA-Z0-9-]+)(?:\.txt)?$/;
+        const matchObject = pattern.exec(pathname);
 
         if (matchObject) {
-            return redirect(url, {
+            return {
                 host: 'tools.ietf.org',
                 pathname: '/html/' + matchObject[1],
-            });
+            };
         }
     }
 
-    return redirect(url, {});
+    return {};
 }

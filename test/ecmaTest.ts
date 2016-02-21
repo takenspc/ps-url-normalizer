@@ -1,7 +1,6 @@
 'use strict';
 import * as assert from 'power-assert';
-import * as url from 'url';
-import * as ecma from '../rules/ecma';
+import * as normalizer from '../';
 
 //
 describe('ecma', () => {
@@ -16,7 +15,7 @@ describe('ecma', () => {
         const expected = 'http://www.ecma-international.org/ecma-262/5.1/';
 
         for (let i = 0; i < urls.length; i++) {
-            const actual = ecma.normalize(url.parse(urls[i]), true);
+            const actual = normalizer.normalize(urls[i]);
             assert(actual === expected);
         }
     });
@@ -30,7 +29,7 @@ describe('ecma', () => {
         const expected = 'http://www.ecma-international.org/ecma-262/6.0/#sec-promise-objects';
 
         for (let i = 0; i < urls.length; i++) {
-            const actual = ecma.normalize(url.parse(urls[i]), true);
+            const actual = normalizer.normalize(urls[i]);
             assert(actual === expected);
         }
     });
@@ -47,7 +46,7 @@ describe('ecma', () => {
         const expected = 'http://www.ecma-international.org/ecma-262/6.0/';
 
         for (let i = 0; i < urls.length; i++) {
-            const actual = ecma.normalize(url.parse(urls[i]), true);
+            const actual = normalizer.normalize(urls[i]);
             assert(actual === expected);
         }
     });

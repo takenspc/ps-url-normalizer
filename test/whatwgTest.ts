@@ -1,13 +1,12 @@
 'use strict';
 import * as assert from 'power-assert';
-import * as url from 'url';
-import * as whatwg from '../rules/whatwg';
+import * as normalizer from '../';
 
 //
 describe('whatwg', () => {
     it('should normalize protocol', () => {
         const httpURL = 'http://dom.spec.whatwg.org/';
-        const actual = whatwg.normalize(url.parse(httpURL), true);
+        const actual = normalizer.normalize(httpURL);
         const expected = 'https://dom.spec.whatwg.org/';
         assert(actual === expected);
     });
@@ -32,7 +31,7 @@ describe('whatwg', () => {
         ];
 
         for (let i = 0; i < oldURLs.length; i++) {
-            const actual = whatwg.normalize(url.parse(oldURLs[i]), true);
+            const actual = normalizer.normalize(oldURLs[i]);
             const expected = normalizedURLs[i];
             assert(actual === expected);
         }

@@ -1,7 +1,6 @@
 'use strict';
 import * as assert from 'power-assert';
-import * as url from 'url';
-import * as ecma from '../rules/ietf';
+import * as normalizer from '../';
 
 //
 describe('ietf', () => {
@@ -18,7 +17,7 @@ describe('ietf', () => {
         const expected = 'https://tools.ietf.org/html/rfc6066';
 
         for (let i = 0; i < urls.length; i++) {
-            const actual = ecma.normalize(url.parse(urls[i]), true);
+            const actual = normalizer.normalize(urls[i]);
             assert(actual === expected);
         }
     });
@@ -40,7 +39,7 @@ describe('ietf', () => {
         const expected = 'https://tools.ietf.org/html/draft-ietf-httpbis-client-hints-00';
 
         for (let i = 0; i < urls.length; i++) {
-            const actual = ecma.normalize(url.parse(urls[i]), true);
+            const actual = normalizer.normalize(urls[i]);
             assert(actual === expected);
         }
     });

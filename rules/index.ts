@@ -3,6 +3,7 @@ import { Url } from 'url';
 import * as whatwg from './whatwg';
 import * as ecma from './ecma';
 import * as ietf from './ietf';
+import * as mozilla from './mozilla';
 
 
 export interface RedirectInfo {
@@ -12,7 +13,7 @@ export interface RedirectInfo {
     hash?: string
 }
 
-export function redirect(url: Url, redirectInfo: RedirectInfo): string {
+function redirect(url: Url, redirectInfo: RedirectInfo): boolean {
     let changed = false;
     const keys = ['protocol', 'host', 'pathname', 'hash'];
 
@@ -23,19 +24,20 @@ export function redirect(url: Url, redirectInfo: RedirectInfo): string {
         }
     }
 
-    return normalize(url, changed);
+    return changed;
 }
 
-export function normalize(url: Url, changed: boolean): string {
-    if (changed) {
+export function normalize(url: Url): string {
+    let canRedirect = true;
+
+    while (canRedirect) {
         const hostWithDot = '.' + url.host;
 
-        const modules = [whatwg, ecma, ietf];
-        for (const module of modules) {
-            for (const host of module.hosts) {
-                if (hostWithDot.endsWith(host)) {
-                    return module.normalize(url, changed);
-                }
+        const redirecters = [whatwg, ecma, ietf, mozilla];
+        for (const redirecter of redirecters) {
+            if (hostWithDot.endsWith(redirecter.host)) {
+                const redirectInfo = redirecter.normalize(url);
+                canRedirect = redirect(url, redirectInfo);
             }
         }
     }
