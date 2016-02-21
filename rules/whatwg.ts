@@ -8,7 +8,7 @@ import { RedirectInfo } from './';
 //
 // Normalize HTML Standard
 //
-const HTML_FRAGMENT_DATA_PATH: string = path.join(__dirname, 'fragment-links.json');
+const HTML_FRAGMENT_DATA_PATH: string = path.join(__dirname, '..', 'data', 'fragment-links.json');
 const HTML_FRAGMENT_DATA: any = JSON.parse(fs.readFileSync(HTML_FRAGMENT_DATA_PATH, 'utf-8'));
 function normalizeHTML(hash: string): RedirectInfo {
     if (!hash) {
