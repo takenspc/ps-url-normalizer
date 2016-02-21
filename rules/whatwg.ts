@@ -25,7 +25,8 @@ function normalizeHTML(hash: string): RedirectInfo {
         };
     }
 
-    throw new Error('Unknown hash ' + hash);
+    console.error('Unknown hash ' + hash);
+    return {};
 }
 
 
