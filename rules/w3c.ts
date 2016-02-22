@@ -8,6 +8,7 @@ import { RedirectInfo } from './';
 //
 function normalizeDevW3Org(url: Url): RedirectInfo {
     const path = url.pathname;
+
     const redirectMap = new Map<string, string>([
         ['/csswg/', 'drafts.csswg.org'],
         ['/fxtf/', 'drafts.fxtf.org'],
@@ -18,6 +19,8 @@ function normalizeDevW3Org(url: Url): RedirectInfo {
         if (path.startsWith(pair[0])) {
             const component = path.split('/');
             component.shift();
+            component.shift();
+
             return {
                 protocol: 'https:',
                 host: pair[1],
@@ -66,14 +69,14 @@ function normalizeDvcsW3Org(url: Url): RedirectInfo {
     const path = url.pathname;
 
     const githubMap = new Map<string, string>([
-        ['/hg/audio/raw-file/tip/webaudio/specification.html', '/web-audio-api/'],
+        ['/hg/IndexedDB/raw-file/tip/Overview.html', '/IndexedDB/'],
         ['/hg/content-security-policy/raw-file/tip/csp-specification.dev.html', '/webappsec-csp/'],
         ['/hg/dap/raw-file/default/light/Overview.html', '/ambient-light/'],
         ['/hg/dom3events/raw-file/tip/html/DOM3-Events.html', '/uievents/'],
+        ['/hg/dom3events/raw-file/tip/html/DOM3Events-code.html', '/uievents-code/'],
         ['/hg/gamepad/raw-file/default/gamepad.html', '/gamepad/'],
         ['/hg/html-media/raw-file/tip/media-source/media-source.html', '/media-source/'],
         ['/hg/ime-api/raw-file/default/Overview.html', '/ime-api/'],
-        ['/hg/IndexedDB/raw-file/tip/Overview.html', '/IndexedDB/'],
         ['/hg/pointerevents/raw-file/tip/pointerEvents.html', '/pointerevents/'],
         ['/hg/pointerlock/raw-file/default/index.html', '/pointerlock/'],
         ['/hg/screen-orientation/raw-file/tip/Overview.html', '/screen-orientation/'],
@@ -104,7 +107,7 @@ function normalizeDvcsW3Org(url: Url): RedirectInfo {
             host: 'drafts.fxtf.org',
             pathname: '/filters/'
         }],
-        ['/hg/fullscreen/raw-file/tip/Overview.htm;', {
+        ['/hg/fullscreen/raw-file/tip/Overview.htm', {
             protocol: 'https:',
             host: 'fullscreen.spec.whatwg.org',
             pathname: '/'
@@ -119,6 +122,11 @@ function normalizeDvcsW3Org(url: Url): RedirectInfo {
             protocol: 'https:',
             host: 'xhr.spec.whatwg.org',
             pathname: '/'
+        }],
+        ['/hg/audio/raw-file/tip/webaudio/specification.html', {
+            protocol: 'https:',
+            host: 'webaudio.github.io',
+            pathname: '/web-audio-api/',
         }],
     ]);
 
@@ -148,9 +156,8 @@ export function normalize(url: Url): RedirectInfo {
     }
 
     if (host === 'dvcs.w3.org') {
-        return normalizeDevW3Org(url);
+        return normalizeDvcsW3Org(url);
     }
-
 
     return {};
 }
