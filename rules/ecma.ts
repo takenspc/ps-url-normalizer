@@ -42,6 +42,12 @@ export function normalize(url: Url): RedirectInfo {
                 pathname: '/ecma-402/1.0/',
             };
         }
+        
+        // TODO
+        // http://www.ecma-international.org/ecma-402/2.0/
+        // http://www.ecma-international.org/ecma-402/1.0/
+        // http://www.ecma-international.org/publications/standards/Ecma-402.htm
+
     }
 
     return {};
