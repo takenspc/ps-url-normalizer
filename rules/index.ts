@@ -5,6 +5,8 @@ import * as ietf from './ietf';
 import * as mozilla from './mozilla';
 import * as w3c from './w3c';
 import * as whatwg from './whatwg';
+import * as xxxRawgit from './rawgit';
+import * as xxxW3CTest from './w3c-test';
 
 
 // https://nodejs.org/api/url.html#url_url_format_urlobj
@@ -56,7 +58,7 @@ export function normalize(url: Url): string {
         }
 
 
-        const redirecters = [ecma, ietf, mozilla, w3c, whatwg];
+        const redirecters = [ecma, ietf, mozilla, w3c, whatwg, xxxRawgit, xxxW3CTest];
         for (const redirecter of redirecters) {
             if (hostWithDot.endsWith(redirecter.host)) {
                 const redirectInfo = redirecter.normalize(url);
