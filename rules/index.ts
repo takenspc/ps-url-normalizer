@@ -1,15 +1,17 @@
 'use strict'; // XXX
-import { Url } from 'url';
+import { Url, format } from 'url';
 import * as whatwg from './whatwg';
 import * as ecma from './ecma';
 import * as ietf from './ietf';
 import * as mozilla from './mozilla';
 
 
+// https://nodejs.org/api/url.html#url_url_format_urlobj
 export interface RedirectInfo {
     protocol?: string
     host?: string
     pathname?: string
+    search?: string
     hash?: string
 }
 
@@ -26,7 +28,7 @@ const HTTPS_HOSTS = [
 
 function redirect(url: Url, redirectInfo: RedirectInfo): boolean {
     let changed = false;
-    const keys = ['protocol', 'host', 'pathname', 'hash'];
+    const keys = ['protocol', 'host', 'pathname', 'search', 'hash'];
 
     for (const key of keys) {
         if (redirectInfo[key] && redirectInfo[key] !== url[key]) {
@@ -62,5 +64,5 @@ export function normalize(url: Url): string {
         }
     } while (canRedirect);
 
-    return `${url.protocol}//${url.host}${url.pathname}${url.hash || ''}`;
+    return format(url);
 }
