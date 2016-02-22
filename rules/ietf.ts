@@ -26,7 +26,19 @@ export function normalize(url: Url): RedirectInfo {
             return {
                 host: 'tools.ietf.org',
                 pathname: '/html/' + matchObject[1],
-            };
+            }
+        }
+    }
+
+    if (host === 'datatracker.ietf.org') {
+        const pattern = /^\/doc\/([a-zA-Z0-9-]+)\/?$/;
+        const matchObject = pattern.exec(pathname);
+
+        if (matchObject) {
+            return {
+                host: 'tools.ietf.org',
+                pathname: '/html/' + matchObject[1],
+            }
         }
     }
 
