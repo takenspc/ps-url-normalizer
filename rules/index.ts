@@ -1,9 +1,10 @@
 'use strict'; // XXX
 import { Url, format } from 'url';
-import * as whatwg from './whatwg';
 import * as ecma from './ecma';
 import * as ietf from './ietf';
 import * as mozilla from './mozilla';
+import * as w3c from './w3c';
+import * as whatwg from './whatwg';
 
 
 // https://nodejs.org/api/url.html#url_url_format_urlobj
@@ -21,7 +22,6 @@ const HTTPS_HOSTS = [
     '.github.io',
     '.khronos.org',
     '.opus-codec.org',
-    '.w3.org',
     '.xiph.org',
 ];
 
@@ -55,7 +55,7 @@ export function normalize(url: Url): string {
         }
 
 
-        const redirecters = [whatwg, ecma, ietf, mozilla];
+        const redirecters = [ecma, ietf, mozilla, w3c, whatwg];
         for (const redirecter of redirecters) {
             if (hostWithDot.endsWith(redirecter.host)) {
                 const redirectInfo = redirecter.normalize(url);
