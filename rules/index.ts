@@ -43,6 +43,7 @@ function redirect(url: Url, redirectInfo: RedirectInfo): boolean {
 export function normalize(url: Url): string {
     let canRedirect = false;
     do {
+        canRedirect = false;
         const hostWithDot = '.' + url.host;
         
         // XXX USE HTST lists
