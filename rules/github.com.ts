@@ -44,7 +44,7 @@ export function normalize(url: Url): RedirectInfo {
     if (path === '/slightlyoff/ServiceWorker/') {
         return {
             protocol: 'https:',
-            host: 'slightlyoff.github.ioo',
+            host: 'slightlyoff.github.io',
             pathname: '/ServiceWorker/spec/service_worker/',
         }
     }
