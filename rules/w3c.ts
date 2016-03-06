@@ -139,6 +139,25 @@ function normalizeDvcsW3Org(url: Url): RedirectInfo {
     return {};
 }
 
+
+//
+// www.w3.org
+//
+function normalizeWWWW3Org(url: Url): RedirectInfo {
+    const path = url.pathname;
+
+    if (path.startsWith('/html/wg/drafts/html/CR/') ||
+        path.startsWith('/html/wg/drafts/html/master/')) {
+        return {
+            host: 'html.spec.whatwg.org',
+            pathname: '/multipage/'
+        };
+    }
+
+    return {};
+}
+
+
 //
 // Normalize
 //
@@ -157,6 +176,10 @@ export function normalize(url: Url): RedirectInfo {
 
     if (host === 'dvcs.w3.org') {
         return normalizeDvcsW3Org(url);
+    }
+
+    if (host === 'www.w3.org') {
+        return normalizeWWWW3Org(url);
     }
 
     return {};
