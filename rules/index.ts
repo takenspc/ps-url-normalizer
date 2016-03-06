@@ -21,7 +21,6 @@ export interface RedirectInfo {
 
 const HTTPS_HOSTS = [
     '.chromium.org',
-    '.github.com',
     '.github.io',
     '.khronos.org',
     '.opus-codec.org',
