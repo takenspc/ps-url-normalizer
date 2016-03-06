@@ -11,6 +11,7 @@ export function normalize(url: Url): RedirectInfo {
 
     // XXX https://es5.github.io/
     // XXX https://tc39.github.io/ecma262/
+    // XXX https://tc39.github.io/ecma402/
 
     if (host === 'ecma-international.org') {
         return {
@@ -36,18 +37,12 @@ export function normalize(url: Url): RedirectInfo {
         }
 
         // ECMA 402 - ECMAScript Internationalization API Specification
-        if (pathname === '/ecma-402/1.0/index.html') {
+        if (pathname.startsWith('/ecma-402/')) {
             return {
                 protocol: 'http:',
-                pathname: '/ecma-402/1.0/',
+                pathname: '/publications/standards/Ecma-402.htm',
             };
         }
-        
-        // TODO
-        // http://www.ecma-international.org/ecma-402/2.0/
-        // http://www.ecma-international.org/ecma-402/1.0/
-        // http://www.ecma-international.org/publications/standards/Ecma-402.htm
-
     }
 
     return {};

@@ -50,4 +50,21 @@ describe('ecma', () => {
             assert(actual === expected);
         }
     });
+
+    it('should normalize urls of ECMA-402', () => {
+        const urls = [
+            'http://www.ecma-international.org/ecma-402/1.0/',
+            'http://www.ecma-international.org/ecma-402/1.0/index.html',
+            'http://www.ecma-international.org/ecma-402/2.0/',
+            'http://www.ecma-international.org/ecma-402/2.0/index.html',
+
+        ];
+
+        const expected = 'http://www.ecma-international.org/publications/standards/Ecma-402.htm';
+
+        for (let i = 0; i < urls.length; i++) {
+            const actual = normalizer.normalize(urls[i]);
+            assert(actual === expected);
+        }
+    });
 });
