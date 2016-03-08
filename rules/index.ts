@@ -1,6 +1,7 @@
 'use strict'; // XXX
 import { Url, format } from 'url';
 import * as ecma from './ecma';
+import * as khronos from './khronos';
 import * as ietf from './ietf';
 import * as mozilla from './mozilla';
 import * as w3c from './w3c';
@@ -22,7 +23,6 @@ export interface RedirectInfo {
 const HTTPS_HOSTS = [
     '.chromium.org',
     '.github.io',
-    '.khronos.org',
     '.opus-codec.org',
     '.xiph.org',
 ];
@@ -58,7 +58,7 @@ export function normalize(url: Url): string {
         }
 
 
-        const redirecters = [ecma, ietf, mozilla, w3c, whatwg, xxxGitHub, xxxRawgit, xxxW3CTest];
+        const redirecters = [ecma, khronos, ietf, mozilla, w3c, whatwg, xxxGitHub, xxxRawgit, xxxW3CTest];
         for (const redirecter of redirecters) {
             if (hostWithDot.endsWith(redirecter.host)) {
                 const redirectInfo = redirecter.normalize(url);
