@@ -128,11 +128,13 @@ function createRedirectInfo(reason: string, urlString: string, includeHash: bool
 export async function normalize(url: urlModule.Url): Promise<ExtendedRedirectInfo>  {
     const urlString = urlModule.format(url);
 
+    // TODO add support cache
     const httpRedirected = await httpRedirect(urlString);
     if (httpRedirected) {
         return createRedirectInfo('Redirect by HTTP 30x', httpRedirected, false);
     }
     
+    // TODO add support cache
     const htmlRedirected = await htmlRedirect(urlString);
     if (htmlRedirected) {
         return createRedirectInfo('Redirect by HTML meta refresh', htmlRedirected, true);
