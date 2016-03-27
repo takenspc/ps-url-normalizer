@@ -3,11 +3,13 @@ import * as url from 'url';
 import * as rules from './rules';
 
 
-export function normalize(urlString: string): string {
+export async function normalize(urlString: string): Promise<string> {
     const urlObj = url.parse(urlString);
     if (urlObj.protocol !== 'http:' && urlObj.protocol !== 'https:') {
-        return urlString;
+        return Promise.resolve(urlString);
     }
 
-    return rules.normalize(urlObj);
+    const urlInfo = await rules.normalize(urlObj);
+    const newURLString = url.format(urlInfo.url);
+    return newURLString;
 }

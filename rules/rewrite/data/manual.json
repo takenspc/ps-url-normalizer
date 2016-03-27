@@ -1,0 +1,219 @@
+[
+  {
+    "from": "http://asmjs.org/",
+    "to": "http://asmjs.org/spec/latest/",
+    "reason": "http://asmjs.org/ has \"specification (work in progress)\" link which points to http://asmjs.org/spec/latest",
+    "enabled": true
+  },
+  {
+    "from": "http://rawgit.com/slightlyoff/IntersectionObserver/master/index.html",
+    "to": "https://github.com/WICG/IntersectionObserver/",
+    "reason": "https://github.com/slightlyoff/IntersectionObserver/ now redirects to https://github.com/WICG/IntersectionObserver/",
+    "enabled": true
+  },
+  {
+    "from": "http://rawgit.com/w3c/html-api-map/master/index.html",
+    "to": "https://w3c.github.io/aria/html-aam/html-aam.html",
+    "reason": "https://www.w3.org/TR/html-aapi/ says \"See HTML Accessibility API Mappings 1.0 instead.\"",
+    "enabled": true
+  },
+  {
+    "from": "http://rawgit.com/w3c/touch-events/master/touchevents.html",
+    "to": "https://w3c.github.io/touch-events/",
+    "reason": "http://rawgit.com/w3c/touch-events/master/touchevents.html is 404 Not Found",
+    "enabled": true
+  },
+  {
+    "from": "http://webaudio.github.com/web-midi-api/",
+    "to": "https://webaudio.github.io/web-midi-api/",
+    "reason": "Typo",
+    "enabled": true
+  },
+  {
+    "from": "http://www.w3c-test.org/webperf/specs/ResourceTiming/",
+    "to": "https://w3c.github.io/resource-timing/",
+    "reason": "Typo",
+    "enabled": true
+  },
+  {
+    "from": "https://dev.w3.org/2009/dap/vibration/",
+    "to": "https://dev.w3.org/2009/dap/vibration/",
+    "reason": "https://dev.w3.org/2009/dap/vibration/ says \"Moved to https://w3c.github.io/vibration/\"",
+    "enabled": true
+  },
+  {
+    "from": "https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html",
+    "to": "https://webaudio.github.io/web-audio-api/",
+    "reason": "https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html says \"This version of the specification is obsolete and has been replaced by the document at http://webaudio.github.io/web-audio-api/.\"",
+    "enabled": true
+  },
+  {
+    "from": "https://dvcs.w3.org/hg/dap/raw-file/default/battery/Overview.html",
+    "to": "https://w3c.github.io/battery/",
+    "reason": "https://dvcs.w3.org/hg/dap/raw-file/default/battery/Overview.html says \"Moved to https://w3c.github.io/battery/\"",
+    "enabled": true
+  },
+  {
+    "from": "https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html",
+    "to": "https://xhr.spec.whatwg.org/",
+    "reason": "https://dvcs.w3.org/hg/xhr/raw-file/tip/Overview.html seems dead",
+    "enabled": false
+  },
+  {
+    "from": "https://github.com/lars-t-hansen/ecmascript_sharedmem",
+    "to": "https://github.com/tc39/ecmascript_sharedmem",
+    "reason": "https://github.com/lars-t-hansen/ecmascript_sharedmem says \"The specification has been moved to the Ecma TC39 space, its new home is here.\"",
+    "enabled": true
+  },
+  {
+    "from": "https://github.com/slightlyoff/ServiceWorker/",
+    "to": "https://slightlyoff.github.io/ServiceWorker/spec/service_worker/",
+    "reason": "Prefer github.io over github.com",
+    "enabled": true
+  },
+  {
+    "from": "https://github.com/tc39/Array.prototype.includes",
+    "to": "https://tc39.github.io/Array.prototype.includes/",
+    "reason": "Prefer github.io over github.com",
+    "enabled": true
+  },
+  {
+    "from": "https://github.com/tc39/ecmascript_sharedmem",
+    "to": "https://tc39.github.io/ecmascript_sharedmem/shmem.html",
+    "reason": "Prefer github.io over github.com",
+    "enabled": true
+  },
+  {
+    "from": "https://github.com/tc39/ecmascript_sharedmem",
+    "to": "https://tc39.github.io/ecmascript_sharedmem/shmem.html",
+    "reason": "Prefer github.io over github.com",
+    "enabled": true
+  },
+  {
+    "from": "https://github.com/whatwg/meta-theme-color",
+    "to": "https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color",
+    "reason": "https://github.com/whatwg/meta-theme-color says \"This work has now been moved to the HTML Standard!\"",
+    "enabled": true
+  },
+  {
+    "from": "https://hg.fxtf.org/drafts/raw-file/tip/filters/Overview.html",
+    "to": "https://drafts.fxtf.org/filters/",
+    "reason": "Prefer drafts.fxtf.org over hg.fxtf.org",
+    "enabled": true
+  },
+  {
+    "from": "https://metromoxie.github.io/webappsec/specs/suborigins/",
+    "to": "https://w3c.github.io/webappsec-suborigins/",
+    "reason": "See https://github.com/w3c/webappsec-suborigins/pull/1",
+    "enabled": true
+  },
+  {
+    "from": "https://reillyeon.github.io/webusb/",
+    "to": "https://wicg.github.io/webusb/",
+    "reason": "https://reillyeon.github.io/webusb/ says \"This page has moved to: https://wicg.github.io/webusb/\"",
+    "enabled": true
+  },
+  {
+    "from": "https://w3c.github.io/DOM-Level-3-Events-code/",
+    "to": "https://w3c.github.io/uievents-code/",
+    "reason": "https://w3c.github.io/DOM-Level-3-Events-code/ says \"Moved to https://w3c.github.io/uievents-code/\"",
+    "enabled": true
+  },
+  {
+    "from": "https://w3c.github.io/eventsource/",
+    "to": "https://html.spec.whatwg.org/multipage/comms.html#server-sent-events",
+    "reason": "https://w3c.github.io/eventsource/ says \"use the WHATWG's Living Standard.\"",
+    "enabled": true
+  },
+  {
+    "from": "https://w3c.github.io/webmessaging/",
+    "to": "https://html.spec.whatwg.org/multipage/comms.html#web-messaging",
+    "reason": "https://w3c.github.io/webmessaging/ says \"use the WHATWG Living Standard\"",
+    "enabled": true
+  },
+  {
+    "from": "https://w3c.github.io/websockets/",
+    "to": "https://html.spec.whatwg.org/multipage/comms.html#network",
+    "reason": "https://w3c.github.io/websockets/ says \"use the WHATWG Living Standard.\"",
+    "enabled": true
+  },
+  {
+    "from": "https://w3c.github.io/webstorage/",
+    "to": "https://html.spec.whatwg.org/multipage/webstorage.html",
+    "reason": "https://w3c.github.io/webstorage/ says \"The latest edits to Web Storage are maintained in https://html.spec.whatwg.org/multipage/webstorage.html.\"",
+    "enabled": true
+  },
+  {
+    "from": "https://webassembly.github.io/",
+    "to": "https://github.com/WebAssembly/spec",
+    "reason": "https://webassembly.github.io/ has \"specification\" link which points to https://github.com/WebAssembly/spec",
+    "enabled": true
+  },
+  {
+    "from": "https://wiki.whatwg.org/wiki/Navigator_HW_Concurrency",
+    "to": "https://html.spec.whatwg.org/multipage/workers.html#navigator.hardwareconcurrency",
+    "reason": "See https://github.com/whatwg/html/issues/879",
+    "enabled": true
+  },
+  {
+    "from": "https://www.khronos.org/registry/typedarray/specs/latest/",
+    "to": "https:/tc39.github.io/ecma262/#sec-typedarray-objects",
+    "reason": "TypedArray is now  part of ECMA-262",
+    "enabled": true
+  },
+  {
+    "from": "https://www.khronos.org/registry/webgl/specs/latest/",
+    "to": "https://www.khronos.org/registry/webgl/specs/latest/1.0/",
+    "reason": "http://www.khronos.org/registry/webgl/specs/latest/ is used to reference WebGL 1.0 ( https://www.khronos.org/registry/webgl/specs/latest/1.0/).",
+    "enabled": true
+  },
+  {
+    "from": "https://www.w3.org/TR/css-shapes/",
+    "to": "https://www.w3.org/TR/css-shapes-1/",
+    "reason": "\"Latest published version\" of https://www.w3.org/TR/css-shapes/ is http://www.w3.org/TR/css-shapes-1/",
+    "enabled": true
+  },
+  {
+    "from": "https://www.w3.org/TR/css-variables/",
+    "to": "https://www.w3.org/TR/css-variables-1/",
+    "reason": "\"Latest published version\" of https://www.w3.org/TR/css-variables/ is http://www.w3.org/TR/css-variables-1/",
+    "enabled": true
+  },
+  {
+    "from": "https://www.w3.org/TR/css3-cascade/",
+    "to": "https://www.w3.org/TR/css-cascade-3/",
+    "reason": "\"Latest published version\" of https://www.w3.org/TR/css3-cascade/ is http://www.w3.org/TR/css-cascade-3/",
+    "enabled": true
+  },
+  {
+    "from": "https://www.w3.org/TR/DOM-Level-3-Events-key/",
+    "to": "https://www.w3.org/TR/uievents-key/",
+    "reason": "\"Latest published version\" of https://www.w3.org/TR/DOM-Level-3-Events-key/ is http://www.w3.org/TR/uievents-key/",
+    "enabled": true
+  },
+  {
+    "from": "https://www.w3.org/TR/DOM-Level-3-Events/",
+    "to": "https://www.w3.org/TR/uievents/",
+    "reason": "\"Latest published version\" of https://www.w3.org/TR/DOM-Level-3-Events/ is http://www.w3.org/TR/uievents/",
+    "enabled": true
+  },
+  {
+    "from": "https://www.w3.org/TR/filter-effects/",
+    "to": "https://www.w3.org/TR/filter-effects-1/",
+    "reason": "\"Latest published version\" of https://www.w3.org/TR/filter-effects/ is http://www.w3.org/TR/filter-effects-1/",
+    "enabled": true
+  },
+  {
+    "from": "https://www.w3.org/TR/html-aapi/",
+    "to": "https://www.w3.org/TR/html-aam-1.0/",
+    "reason": "https://www.w3.org/TR/html-aapi/ says \"See HTML Accessibility API Mappings 1.0 instead.\"",
+    "enabled": true
+  },
+  {
+    "from": 0,
+    "to": 0,
+    "type": 0,
+    "reason": 0,
+    "enabled": false
+  }
+]

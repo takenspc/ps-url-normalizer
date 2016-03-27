@@ -1,15 +1,8 @@
 'use strict'; // XXX
 import { Url, format } from 'url';
-import * as github from './github.io';
-import * as ecma from './ecma';
-import * as khronos from './khronos';
-import * as ietf from './ietf';
-import * as mozilla from './mozilla';
-import * as w3c from './w3c';
-import * as whatwg from './whatwg';
-import * as xxxGitHub from './github.com';
-import * as xxxRawgit from './rawgit';
-import * as xxxW3CTest from './w3c-test';
+import * as rewrite from './rewrite';
+import * as redirect from './redirect';
+import * as wd2ed from './wd2ed';
 
 
 // https://nodejs.org/api/url.html#url_url_format_urlobj
@@ -21,18 +14,24 @@ export interface RedirectInfo {
     hash?: string
 }
 
-const HTTPS_HOSTS = [
-    '.chromium.org',
-    '.opus-codec.org',
-    '.xiph.org',
-];
+export interface ExtendedRedirectInfo {
+    type: string
+    reason: string
+    redirectInfo: RedirectInfo
+}
 
 
-function redirect(url: Url, redirectInfo: RedirectInfo): boolean {
+export interface URLInfo {
+    url: Url,
+    redirects: ExtendedRedirectInfo[],
+}
+
+
+function handleRedirect(url: Url, extRedirectInfo: ExtendedRedirectInfo): boolean {
+    const redirectInfo = extRedirectInfo.redirectInfo;
+
     let changed = false;
-    const keys = ['protocol', 'host', 'pathname', 'search', 'hash'];
-
-    for (const key of keys) {
+    for (const key of Object.keys(redirectInfo)) {
         if (redirectInfo[key] && redirectInfo[key] !== url[key]) {
             url[key] = redirectInfo[key];
             changed = true;
@@ -42,30 +41,36 @@ function redirect(url: Url, redirectInfo: RedirectInfo): boolean {
     return changed;
 }
 
-export function normalize(url: Url): string {
-    let canRedirect = false;
+
+export async function normalize(url: Url): Promise<URLInfo> {
+    // console.log(format(url));
+    const redirects: ExtendedRedirectInfo[] = [];
+
+    let outerRedirected = false;
+    const redirecters = [redirect, rewrite , wd2ed, redirect];
     do {
-        canRedirect = false;
-        const hostWithDot = '.' + url.host;
-        
-        // XXX USE HTST lists
-        for (const httpsHost of HTTPS_HOSTS) {
-            if (hostWithDot.endsWith(httpsHost)) {
-                const redirectInfo = { protocol: 'https:' };
-                canRedirect = redirect(url, redirectInfo);
-                break;
-            }
-        }
-
-
-        const redirecters = [github, ecma, khronos, ietf, mozilla, w3c, whatwg, xxxGitHub, xxxRawgit, xxxW3CTest];
+        outerRedirected = false;
         for (const redirecter of redirecters) {
-            if (hostWithDot.endsWith(redirecter.host)) {
-                const redirectInfo = redirecter.normalize(url);
-                canRedirect = redirect(url, redirectInfo);
-            }
+            let innerRedirected = false;
+            do {
+                const extRedirectInfo = await redirecter.normalize(url);
+                if (extRedirectInfo) {
+                    innerRedirected = handleRedirect(url, extRedirectInfo);
+                    if (innerRedirected) {
+                        redirects.push(extRedirectInfo);
+                        outerRedirected = true;
+                    }
+                } else {
+                    innerRedirected = false;
+                }
+            } while (innerRedirected);
         }
-    } while (canRedirect);
+    } while (outerRedirected);
 
-    return format(url);
+    // console.log('\t' + format(url));
+
+    return {
+        url: url,
+        redirects: redirects,
+    };
 }
