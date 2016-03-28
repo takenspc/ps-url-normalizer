@@ -43,9 +43,11 @@ function handleRedirect(url: Url, extRedirectInfo: ExtendedRedirectInfo): boolea
 
 
 export async function normalize(url: Url): Promise<URLInfo> {
+    const originalURLString = format(url);
     const redirects: ExtendedRedirectInfo[] = [];
 
     let outerRedirected = false;
+    let count = 0;
     const redirecters = [redirect, rewrite , wd2ed, redirect];
     do {
         outerRedirected = false;
@@ -59,8 +61,16 @@ export async function normalize(url: Url): Promise<URLInfo> {
                         redirects.push(extRedirectInfo);
                         outerRedirected = true;
                     }
+                    count++;
+                    if (count > 10) {
+                        console.error(originalURLString, count);
+                        break;
+                    }
                 } else {
                     innerRedirected = false;
+                }
+                if (count > 10) {
+                    break;
                 }
             } while (innerRedirected);
         }
