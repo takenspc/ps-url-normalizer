@@ -43,7 +43,6 @@ function handleRedirect(url: Url, extRedirectInfo: ExtendedRedirectInfo): boolea
 
 
 export async function normalize(url: Url): Promise<URLInfo> {
-    // console.log(format(url));
     const redirects: ExtendedRedirectInfo[] = [];
 
     let outerRedirected = false;
@@ -66,8 +65,6 @@ export async function normalize(url: Url): Promise<URLInfo> {
             } while (innerRedirected);
         }
     } while (outerRedirected);
-
-    // console.log('\t' + format(url));
 
     return {
         url: url,
