@@ -9,9 +9,50 @@ import { url2RedirectInfo } from '../utils';
 //
 // HTTP
 //
+class CacheEntry<T> {
+    datetime: number
+    value: T
+    constructor(value: T) {
+        this.datetime = Date.now();
+        this.value = value;
+    }
+}
+
+class Cache<T> {
+    map: Map<T, CacheEntry<T>> = new Map();
+    get(key: T): T {
+        const timeout = 3600 * 1000;
+        const entry = this.map.get(key);
+
+        if (entry && (Date.now() - entry.datetime < timeout)) {
+            return entry.value;
+        }
+
+        return null;
+    }
+    
+    set(key: T, value: T) {
+        this.map.set(key, new CacheEntry<T>(value));
+    }
+}
+
+
+//
+// HTTP Redirect
+//
+const HTTP_REDIRECT_CACHE: Cache<string> = new Cache<string>();
+
 function httpRedirect(urlString: string): Promise<string> {
     return new Promise((resolve, reject) => {
-        request.head(urlString, (err, response) => {
+        const cached = HTTP_REDIRECT_CACHE.get(urlString);
+        if (cached) {
+            resolve(cached);
+            return;
+        }
+
+        request.head({
+            url: urlString 
+        }, (err, response) => {
             if (err) {
                 // XXX
                 console.error(urlString, err);
@@ -21,10 +62,13 @@ function httpRedirect(urlString: string): Promise<string> {
 
             // XXX
             if (response.request) {
-                resolve(response.request.uri.href);
+                const redirectURL = response.request.uri.href;
+                HTTP_REDIRECT_CACHE.set(urlString, redirectURL);
+                resolve(redirectURL);
                 return;
             }
 
+            HTTP_REDIRECT_CACHE.set(urlString, urlString);
             resolve(null);
         });
     });
@@ -62,12 +106,21 @@ function parseMeta(attrs: parse5.Attr[]): string {
     return null;
 }
 
+const HTML_REDIRECT_CACHE: Cache<string> = new Cache<string>();
+
 function htmlRedirect(urlString: string): Promise<string> {
     const parser = new parse5.SAXParser();
     let redirectURL = null;
     let seenBody = false;
 
     return new Promise((resolve, reject) => {
+        const cached = HTML_REDIRECT_CACHE.get(urlString);
+        if (cached) {
+            resolve(cached);
+            return;
+        }
+
+
         parser.on('startTag', (name, attrs, selfClosing) => {
             if (name === 'meta' && attrs.length > 1) {
                 const redirectPath = parseMeta(attrs);
@@ -92,6 +145,10 @@ function htmlRedirect(urlString: string): Promise<string> {
                 console.error(urlString, '<body> is not found in first 1024 bytes')
             }
 
+            if (redirectURL) {
+                HTML_REDIRECT_CACHE.set(urlString, redirectURL);
+            }
+
             resolve(redirectURL);
         });
         
@@ -113,7 +170,7 @@ function htmlRedirect(urlString: string): Promise<string> {
 //
 function createRedirectInfo(reason: string, urlString: string, includeHash: boolean): ExtendedRedirectInfo {
     const redirectInfo = url2RedirectInfo(urlString, includeHash);
-    
+
     return {
         type: 'redirect',
         reason: reason,
@@ -125,8 +182,14 @@ function createRedirectInfo(reason: string, urlString: string, includeHash: bool
 //
 // Entry Point
 //
+function getURLStringWihtoutHash(url: urlModule.Url): string {
+    const copied = Object.assign({}, url);
+    copied.hash = null;
+    return urlModule.format(copied);
+}
+
 export async function normalize(url: urlModule.Url): Promise<ExtendedRedirectInfo>  {
-    const urlString = urlModule.format(url);
+    const urlString = getURLStringWihtoutHash(url);
 
     // TODO add support cache
     const httpRedirected = await httpRedirect(urlString);
