@@ -155,7 +155,7 @@ function htmlRedirect(urlString: string): Promise<string> {
         request.get({
             url: urlString,
             headers: {
-                Range: 'bytes=0-1024',
+                range: 'bytes=0-1024',
             },
         }).on('error', (err) => {
             reject(err);
