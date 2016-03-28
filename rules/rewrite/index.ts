@@ -7,6 +7,7 @@ import { manualRedirect, ManualRedirectEntry } from '../manual';
 import * as ecma from './ecma';
 import * as github from './github';
 import * as ietf from './ietf';
+import * as w3c from './w3c';
 import * as whatwg from './whatwg';
 import * as xiph from './xiph';
 
@@ -59,6 +60,7 @@ export async function normalize(url: Url): Promise<ExtendedRedirectInfo> {
         ecma.rewrite,
         github.rewrite,
         ietf.rewrite,
+        w3c.rewrite,
         whatwg.rewrite,
         xiph.rewrite,
     ];
