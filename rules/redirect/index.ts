@@ -21,14 +21,21 @@ class CacheEntry<T> {
 class Cache<T> {
     map: Map<T, CacheEntry<T>> = new Map();
     get(key: T): T {
+        if (this.has(key)) {
+            return this.map.get(key).value;
+        }
+
+        return null;
+    }
+    
+    has(key: T): boolean {
         const timeout = 3600 * 1000;
         const entry = this.map.get(key);
 
         if (entry && (Date.now() - entry.datetime < timeout)) {
-            return entry.value;
+            return true;
         }
-
-        return null;
+        return false;
     }
     
     set(key: T, value: T) {
@@ -44,9 +51,8 @@ const HTTP_REDIRECT_CACHE: Cache<string> = new Cache<string>();
 
 function httpRedirect(urlString: string): Promise<string> {
     return new Promise((resolve, reject) => {
-        const cached = HTTP_REDIRECT_CACHE.get(urlString);
-        if (cached) {
-            resolve(cached);
+        if (HTTP_REDIRECT_CACHE.has(urlString)) {
+            resolve(HTTP_REDIRECT_CACHE.get(urlString));
             return;
         }
 
@@ -63,12 +69,14 @@ function httpRedirect(urlString: string): Promise<string> {
             // XXX
             if (response.request) {
                 const redirectURL = response.request.uri.href;
-                HTTP_REDIRECT_CACHE.set(urlString, redirectURL);
-                resolve(redirectURL);
-                return;
+                if (urlString !== redirectURL) {
+                    HTTP_REDIRECT_CACHE.set(urlString, redirectURL);
+                    resolve(redirectURL);
+                    return;
+                }
             }
 
-            HTTP_REDIRECT_CACHE.set(urlString, urlString);
+            HTTP_REDIRECT_CACHE.set(urlString, null);
             resolve(null);
         });
     });
@@ -81,7 +89,7 @@ function httpRedirect(urlString: string): Promise<string> {
 function parseMeta(attrs: parse5.Attr[]): string {
     let redirectPath = null;
     let hasRedirect = false;
-    const redirectRegExp = /^\s*\d+;\s*url=['"]?(.+*)['"]?/;
+    const redirectRegExp = /^\s*\d+;\s*url=['"]?(.+?)['"]?/;
 
     for (const attr of attrs) {
         const name = attr.name.toLowerCase();
@@ -114,9 +122,8 @@ function htmlRedirect(urlString: string): Promise<string> {
     let seenBody = false;
 
     return new Promise((resolve, reject) => {
-        const cached = HTML_REDIRECT_CACHE.get(urlString);
-        if (cached) {
-            resolve(cached);
+        if (HTML_REDIRECT_CACHE.has(urlString)) {
+            resolve(HTML_REDIRECT_CACHE.get(urlString));
             return;
         }
 
@@ -126,6 +133,7 @@ function htmlRedirect(urlString: string): Promise<string> {
                 const redirectPath = parseMeta(attrs);
                 if (redirectPath) {
                     redirectURL = urlModule.resolve(urlString, redirectPath);
+                    seenBody = true;
                     parser.stop();
                 }
             }
@@ -137,17 +145,16 @@ function htmlRedirect(urlString: string): Promise<string> {
         });
 
         parser.on('error', (err) => {
+            console.error(urlString, 'parse error');
             reject(err);
         });
 
         parser.on('end', () => {
             if (!seenBody) {
-                console.error(urlString, '<body> is not found in first 1024 bytes')
+                console.error(urlString, '<body> is not found in first 1024 bytes');
             }
 
-            if (redirectURL) {
-                HTML_REDIRECT_CACHE.set(urlString, redirectURL);
-            }
+            HTML_REDIRECT_CACHE.set(urlString, redirectURL);
 
             resolve(redirectURL);
         });
@@ -155,9 +162,10 @@ function htmlRedirect(urlString: string): Promise<string> {
         request.get({
             url: urlString,
             headers: {
-                range: 'bytes=0-1024',
+                range: 'bytes=0-2048',
             },
         }).on('error', (err) => {
+            console.error(urlString, 'network error');
             reject(err);
         }).pipe(parser);
     });
@@ -191,13 +199,11 @@ function getURLStringWihtoutHash(url: urlModule.Url): string {
 export async function normalize(url: urlModule.Url): Promise<ExtendedRedirectInfo>  {
     const urlString = getURLStringWihtoutHash(url);
 
-    // TODO add support cache
     const httpRedirected = await httpRedirect(urlString);
     if (httpRedirected) {
         return createRedirectInfo('Redirect by HTTP 30x', httpRedirected, false);
     }
-    
-    // TODO add support cache
+
     const htmlRedirected = await htmlRedirect(urlString);
     if (htmlRedirected) {
         return createRedirectInfo('Redirect by HTML meta refresh', htmlRedirected, true);
