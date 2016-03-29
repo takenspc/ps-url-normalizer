@@ -6,7 +6,7 @@
     "enabled": true
   },
   {
-    "from": "http://rawgit.com/slightlyoff/IntersectionObserver/master/index.html",
+    "from": "https://rawgit.com/slightlyoff/IntersectionObserver/master/index.html",
     "to": "https://github.com/WICG/IntersectionObserver/",
     "reason": "https://github.com/slightlyoff/IntersectionObserver/ now redirects to https://github.com/WICG/IntersectionObserver/",
     "enabled": true
@@ -37,7 +37,7 @@
   },
   {
     "from": "https://dev.w3.org/2009/dap/vibration/",
-    "to": "https://dev.w3.org/2009/dap/vibration/",
+    "to": "https://w3c.github.io/vibration/",
     "reason": "https://dev.w3.org/2009/dap/vibration/ says \"Moved to https://w3c.github.io/vibration/\"",
     "enabled": true
   },
@@ -74,12 +74,6 @@
   {
     "from": "https://github.com/tc39/Array.prototype.includes",
     "to": "https://tc39.github.io/Array.prototype.includes/",
-    "reason": "Prefer github.io over github.com",
-    "enabled": true
-  },
-  {
-    "from": "https://github.com/tc39/ecmascript_sharedmem",
-    "to": "https://tc39.github.io/ecmascript_sharedmem/shmem.html",
     "reason": "Prefer github.io over github.com",
     "enabled": true
   },
@@ -157,14 +151,14 @@
   },
   {
     "from": "https://www.khronos.org/registry/typedarray/specs/latest/",
-    "to": "https:/tc39.github.io/ecma262/#sec-typedarray-objects",
+    "to": "https://tc39.github.io/ecma262/#sec-typedarray-objects",
     "reason": "TypedArray is now  part of ECMA-262",
     "enabled": true
   },
   {
     "from": "https://www.khronos.org/registry/webgl/specs/latest/",
-    "to": "https://www.khronos.org/registry/webgl/specs/latest/1.0/",
-    "reason": "http://www.khronos.org/registry/webgl/specs/latest/ is used to reference WebGL 1.0 ( https://www.khronos.org/registry/webgl/specs/latest/1.0/).",
+    "to": "https://www.khronos.org/registry/webgl/specs/1.0/",
+    "reason": "http://www.khronos.org/registry/webgl/specs/latest/ is used to reference WebGL 1.0 ( https://www.khronos.org/registry/webgl/specs/1.0/).",
     "enabled": true
   },
   {
