@@ -4,17 +4,30 @@ import { RedirectInfo, ExtendedRedirectInfo } from '../';
 
 
 //
-// Entry Point
+// dev.w3.org
 //
-export function rewrite(url: Url): ExtendedRedirectInfo {
-    const host = '.w3.org';
+const REDIRECT_MAP: Map<string, string> = new Map([
+    ['/csswg/', 'drafts.csswg.org'],
+    ['/fxtf/', 'drafts.fxtf.org'],
+    ['/houdini/', 'drafts.css-houdini.org'],
+]);
 
-    if (('.' + url.host).endsWith(host)) {
-        if (url.protocol === 'http:') {
-            const reason = 'Prefer https: over http:';
+function rewriteDevW3Org(url: Url): ExtendedRedirectInfo {
+    const pathname = url.pathname;
+
+    for (const pair of REDIRECT_MAP) {
+        const knownPathname = pair[0];
+        const host = pair[1];
+
+        if (pathname.startsWith(knownPathname)) {
+            const newPathname = pathname.substring(knownPathname.length - 1);
+
+            const reason = 'dev.w3.org has retired';
             const redirectInfo: RedirectInfo = {
                 protocol: 'https:',
-            };
+                host: host,
+                pathname: newPathname,
+            }
 
             return {
                 type: 'rewrite',
@@ -22,6 +35,19 @@ export function rewrite(url: Url): ExtendedRedirectInfo {
                 redirectInfo: redirectInfo,
             };
         }
+    }
+
+    return null;
+}
+
+
+//
+// Entry Point
+//
+export function rewrite(url: Url): ExtendedRedirectInfo {
+
+    if (url.host  === 'dev.w3.org') {
+        return rewriteDevW3Org(url);
     }
 
     return null;
