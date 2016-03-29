@@ -89,7 +89,7 @@ function httpRedirect(urlString: string): Promise<string> {
 function parseMeta(attrs: parse5.Attr[]): string {
     let redirectPath = null;
     let hasRedirect = false;
-    const redirectRegExp = /^\s*\d+;\s*url=['"]?(.+?)['"]?/;
+    const redirectRegExp = /^\s*\d+;\s*url=['"]?(.+?)['"]?\s*$/i;
 
     for (const attr of attrs) {
         const name = attr.name.toLowerCase();
