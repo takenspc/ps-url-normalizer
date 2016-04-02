@@ -76,7 +76,7 @@ const HTML_HOST_MAP: Map<string, string[]> = new Map([
         '/*',
     ]],
     ['html.spec.whatwg.org', [
-        '/',
+        '/*',
     ]],
 ]);
 
@@ -95,11 +95,11 @@ export function rewrite(url: Url): ExtendedRedirectInfo {
             if (expectedPath.endsWith('*')) {
                 const pathPrefix = expectedPath.substring(0, expectedPath.length - 1);
                 if (pathname.startsWith(pathPrefix)) {
-                    return createRedirectInfo(path);
+                    return createRedirectInfo(url);
                 }
             } else {
                 if (expectedPath === pathname) {
-                    return createRedirectInfo(path);
+                    return createRedirectInfo(url);
                 }
             }
         }
