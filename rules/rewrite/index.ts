@@ -29,6 +29,11 @@ function rewrite(url: Url): ExtendedRedirectInfo {
 // Remove default Index
 //
 function removeDefaultIndex(url: Url): ExtendedRedirectInfo {
+    // XXX
+    if (url.host === 'dvcs.w3.org') {
+        return null;
+    }
+    
     const defaultIndex = /^(.+?\/)(index.html?)$/i;
     
     const matchObject = defaultIndex.exec(url.pathname);
