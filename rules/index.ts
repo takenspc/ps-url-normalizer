@@ -48,7 +48,7 @@ export async function normalize(url: Url): Promise<URLInfo> {
 
     let outerRedirected = false;
     let count = 0;
-    const redirecters = [redirect, rewrite , wd2ed, redirect];
+    const redirecters = [rewrite , wd2ed, redirect];
     do {
         outerRedirected = false;
         for (const redirecter of redirecters) {
