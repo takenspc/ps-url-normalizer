@@ -38,19 +38,19 @@
   {
     "from": "https://dev.w3.org/2009/dap/vibration/",
     "to": "https://w3c.github.io/vibration/",
-    "reason": "https://dev.w3.org/2009/dap/vibration/ says \"Moved to https://w3c.github.io/vibration/\"",
+    "reason": "https://dev.w3.org/2009/dap/vibration/ \"Moved to https://w3c.github.io/vibration/\"",
     "enabled": true
   },
   {
     "from": "https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html",
     "to": "https://webaudio.github.io/web-audio-api/",
-    "reason": "https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html says \"This version of the specification is obsolete and has been replaced by the document at http://webaudio.github.io/web-audio-api/.\"",
+    "reason": "https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html \"has been replaced by the document at http://webaudio.github.io/web-audio-api/.\"",
     "enabled": true
   },
   {
     "from": "https://dvcs.w3.org/hg/dap/raw-file/default/battery/Overview.html",
     "to": "https://w3c.github.io/battery/",
-    "reason": "https://dvcs.w3.org/hg/dap/raw-file/default/battery/Overview.html says \"Moved to https://w3c.github.io/battery/\"",
+    "reason": "https://dvcs.w3.org/hg/dap/raw-file/default/battery/Overview.html \"Moved to https://w3c.github.io/battery/\"",
     "enabled": true
   },
   {
@@ -62,7 +62,7 @@
   {
     "from": "https://github.com/lars-t-hansen/ecmascript_sharedmem",
     "to": "https://github.com/tc39/ecmascript_sharedmem",
-    "reason": "https://github.com/lars-t-hansen/ecmascript_sharedmem says \"The specification has been moved to the Ecma TC39 space, its new home is here.\"",
+    "reason": "https://github.com/lars-t-hansen/ecmascript_sharedmem \"has been moved to the Ecma TC39 space\"",
     "enabled": true
   },
   {
@@ -86,7 +86,7 @@
   {
     "from": "https://github.com/whatwg/meta-theme-color",
     "to": "https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color",
-    "reason": "https://github.com/whatwg/meta-theme-color says \"This work has now been moved to the HTML Standard!\"",
+    "reason": "https://github.com/whatwg/meta-theme-color \"has now been moved to the HTML Standard!\"",
     "enabled": true
   },
   {
@@ -104,13 +104,13 @@
   {
     "from": "https://reillyeon.github.io/webusb/",
     "to": "https://wicg.github.io/webusb/",
-    "reason": "https://reillyeon.github.io/webusb/ says \"This page has moved to: https://wicg.github.io/webusb/\"",
+    "reason": "https://reillyeon.github.io/webusb/ \"has moved to: https://wicg.github.io/webusb/\"",
     "enabled": true
   },
   {
     "from": "https://w3c.github.io/DOM-Level-3-Events-code/",
     "to": "https://w3c.github.io/uievents-code/",
-    "reason": "https://w3c.github.io/DOM-Level-3-Events-code/ says \"Moved to https://w3c.github.io/uievents-code/\"",
+    "reason": "https://w3c.github.io/DOM-Level-3-Events-code/ \"Moved to https://w3c.github.io/uievents-code/\"",
     "enabled": true
   },
   {
@@ -158,7 +158,7 @@
   {
     "from": "https://www.khronos.org/registry/webgl/specs/latest/",
     "to": "https://www.khronos.org/registry/webgl/specs/1.0/",
-    "reason": "http://www.khronos.org/registry/webgl/specs/latest/ is used to reference WebGL 1.0 ( https://www.khronos.org/registry/webgl/specs/1.0/).",
+    "reason": "http://www.khronos.org/registry/webgl/specs/latest/ is used to reference WebGL 1.0 (https://www.khronos.org/registry/webgl/specs/1.0/).",
     "enabled": true
   },
   {
@@ -204,10 +204,45 @@
     "enabled": true
   },
   {
-    "from": 0,
-    "to": 0,
-    "type": 0,
-    "reason": 0,
-    "enabled": false
+    "from": "https://drafts.fxtf.org/web-animations/",
+    "to": "https://w3c.github.io/web-animations/",
+    "reason": "https://drafts.fxtf.org/web-animations/index.html redirects to https://w3c.github.io/web-animations/",
+    "enabled": true
+  },
+  {
+    "from": "https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html",
+    "to": "https://w3c.github.io/media-source/",
+    "reason": "https://dvcs.w3.org/hg/html-media/raw-file/tip/media-source/media-source.html \"has moved to https://w3c.github.io/media-source/.\"",
+    "enabled": true
+  },
+  {
+    "from": "https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html",
+    "to": "https://w3c.github.io/web-performance/specs/setImmediate/Overview.html",
+    "reason": "\"This version\" of https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html is https://w3c.github.io/web-performance/specs/setImmediate/Overview.html",
+    "enabled": true
+  },
+  {
+    "from": "https://w3c.github.io/gamepad/gamepad.html",
+    "to": "https://w3c.github.io/gamepad/",
+    "reason": "https://w3c.github.io/gamepad/gamepad.html redirects to https://w3c.github.io/gamepad/",
+    "enabled": true
+  },
+  {
+    "from": "https://w3c.github.io/ime-api/Overview.html",
+    "to": "https://w3c.github.io/ime-api/",
+    "reason": "https://w3c.github.io/ime-api/Overview.html is 404 Not Found",
+    "enabled": true
+  },
+  {
+    "from": "https://github.com/tc39/ecmascript_simd",
+    "to": "https://tc39.github.io/ecmascript_simd/",
+    "reason": "Prefer github.io over github.com",
+    "enabled": true
+  },
+  {
+    "from": "https://rwaldron.github.io/exponentiation-operator/",
+    "to": "https://tc39.github.io/ecma262/#sec-exp-operator",
+    "reason": "Exponentiation Operator is now part of ECMA-262. See https://github.com/tc39/ecma262/pull/318",
+    "enabled": true
   }
 ]
