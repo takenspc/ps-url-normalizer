@@ -17,6 +17,7 @@ export interface RedirectInfo {
 export interface ExtendedRedirectInfo {
     type: string
     reason: string
+    to?: string
     redirectInfo: RedirectInfo
 }
 
@@ -58,6 +59,7 @@ export async function normalize(url: Url): Promise<URLInfo> {
                 if (extRedirectInfo) {
                     innerRedirected = handleRedirect(url, extRedirectInfo);
                     if (innerRedirected) {
+                        extRedirectInfo.to = format(url);
                         redirects.push(extRedirectInfo);
                         outerRedirected = true;
                     }
