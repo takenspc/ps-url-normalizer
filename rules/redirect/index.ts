@@ -119,7 +119,6 @@ const HTML_REDIRECT_CACHE: Cache<string> = new Cache<string>();
 function htmlRedirect(urlString: string): Promise<string> {
     const parser = new parse5.SAXParser();
     let redirectURL = null;
-    let seenBody = false;
 
     return new Promise((resolve, reject) => {
         if (HTML_REDIRECT_CACHE.has(urlString)) {
@@ -133,13 +132,11 @@ function htmlRedirect(urlString: string): Promise<string> {
                 const redirectPath = parseMeta(attrs);
                 if (redirectPath) {
                     redirectURL = urlModule.resolve(urlString, redirectPath);
-                    seenBody = true;
                     parser.stop();
                 }
             }
             
             if (name === 'body') {
-                seenBody = true;
                 parser.stop();
             }
         });
@@ -150,10 +147,6 @@ function htmlRedirect(urlString: string): Promise<string> {
         });
 
         parser.on('end', () => {
-            if (!seenBody) {
-                console.error(urlString, '<body> is not found in first 1024 bytes');
-            }
-
             HTML_REDIRECT_CACHE.set(urlString, redirectURL);
 
             resolve(redirectURL);
@@ -162,7 +155,7 @@ function htmlRedirect(urlString: string): Promise<string> {
         request.get({
             url: urlString,
             headers: {
-                range: 'bytes=0-2048',
+                range: 'bytes=0-1024',
             },
         }).on('error', (err) => {
             console.error(urlString, 'network error');
