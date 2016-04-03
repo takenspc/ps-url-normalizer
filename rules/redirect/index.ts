@@ -194,12 +194,12 @@ export async function normalize(url: urlModule.Url): Promise<ExtendedRedirectInf
 
     const httpRedirected = await httpRedirect(urlString);
     if (httpRedirected) {
-        return createRedirectInfo('Redirect by HTTP 30x', httpRedirected, false);
+        return createRedirectInfo('redirect by HTTP 30x', httpRedirected, false);
     }
 
     const htmlRedirected = await htmlRedirect(urlString);
     if (htmlRedirected) {
-        return createRedirectInfo('Redirect by HTML meta refresh', htmlRedirected, true);
+        return createRedirectInfo('redirect by HTML meta refresh', htmlRedirected, true);
     }
 
     return null;

@@ -38,7 +38,7 @@ function removeDefaultIndex(url: Url): ExtendedRedirectInfo {
     
     const matchObject = defaultIndex.exec(url.pathname);
     if (matchObject) {
-        const reason = `Remove default index (${matchObject[2]}).`;
+        const reason = `remove default index (${matchObject[2]}).`;
         const redirectInfo: RedirectInfo = {
             pathname: matchObject[1],
         };

@@ -7,7 +7,7 @@ import { RedirectInfo, ExtendedRedirectInfo } from '../';
 // tools.ietf.org
 //
 function createRedirectInfo(pathname: string): ExtendedRedirectInfo {
-    const reason = 'Prefer html viewer (tools.ietf.org)';
+    const reason = 'prefer html viewer (tools.ietf.org)';
     const redirectInfo: RedirectInfo = {
         host: 'tools.ietf.org',
         pathname: '/html/' + pathname,

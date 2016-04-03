@@ -8,7 +8,7 @@ import { RedirectInfo, ExtendedRedirectInfo } from '../';
 //
 export function rewrite(url: Url): ExtendedRedirectInfo {
     if (url.host === 'ecma-international.org') {
-        const reason = 'Prefer www.ecma-international.org over ecma-international.org';
+        const reason = 'prefer www.ecma-international.org over ecma-international.org';
         const redirectInfo: RedirectInfo = {
             host: 'www.ecma-international.org',
         };

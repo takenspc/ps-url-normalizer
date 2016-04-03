@@ -19,7 +19,7 @@ export function rewrite(url: Url): ExtendedRedirectInfo {
     for (const httpsHost of HTTPS_HOSTS) {
         if (hostWithDot.endsWith(httpsHost)) {
             if (url.protocol === 'http:') {
-                const reason = 'Prefer https: over http:';
+                const reason = 'prefer https: over http:';
                 const redirectInfo: RedirectInfo = {
                     protocol: 'https:',
                 };

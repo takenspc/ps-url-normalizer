@@ -2,49 +2,43 @@
     {
         "from": "http://www.ecma-international.org/ecma-262/6.0/",
         "to": "https://tc39.github.io/ecma262/",
-        "reason": "",
+        "reason": "Editors Draft of ECMA-262 is https://tc39.github.io/ecma262/",
         "enabled": true
     },
     {
         "from": "http://www.ecma-international.org/ecma-402/1.0/",
         "to": "https://tc39.github.io/ecma402/",
-        "reason": "",
+        "reason": "Editors Draft of ECMA-402 is https://tc39.github.io/ecma402/",
         "enabled": true
     },
     {
         "from": "http://www.ecma-international.org/publications/standards/Ecma-402.htm",
         "to": "https://tc39.github.io/ecma402/",
-        "reason": "",
+        "reason": "Editors Draft of ECMA-402 is https://tc39.github.io/ecma402/",
         "enabled": true
     },
     {
         "from": "https://www.khronos.org/registry/webgl/specs/1.0/",
         "to": "https://www.khronos.org/registry/webgl/specs/latest/1.0/",
-        "reason": "",
+        "reason": "Editors Draft of WebGL 1.0 is https://www.khronos.org/registry/webgl/specs/latest/1.0/",
         "enabled": true
     },
     {
         "from": "https://www.khronos.org/registry/webgl/specs/2.0/",
         "to": "https://www.khronos.org/registry/webgl/specs/latest/2.0/",
-        "reason": "",
-        "enabled": true
-    },
-    {
-        "from": "https://www.w3.org/TR/2dcontext2/",
-        "to": "https://html.spec.whatwg.org/multipage/",
-        "reason": "",
+        "reason": "Editors Draft of WebGL 2.0 is https://www.khronos.org/registry/webgl/specs/latest/2.0/",
         "enabled": true
     },
     {
         "from": "https://www.w3.org/TR/selectors4/",
         "to": "https://drafts.csswg.org/selectors-4/",
-        "reason": "",
+        "reason": "Editors Draft of Selectors Level 4 is https://drafts.csswg.org/selectors-4/",
         "enabled": true
     },
     {
         "from": "https://www.w3.org/TR/web-animations/",
         "to": "https://w3c.github.io/web-animations/",
-        "reason": "",
+        "reason": "Editors Draft of Web Animations is https://w3c.github.io/web-animations/",
         "enabled": true
     }
 ]

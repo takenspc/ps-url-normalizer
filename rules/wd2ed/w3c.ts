@@ -48,7 +48,7 @@ function specrefOrg(url: Url): ExtendedRedirectInfo {
 
         return {
             type: 'wd2ed',
-            reason: 'http://www.specref.org/',
+            reason: 'using http://www.specref.org/ data',
             redirectInfo: redirectInfo,
         };
     }

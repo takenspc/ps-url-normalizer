@@ -17,15 +17,15 @@ function rewriteDevW3Org(url: Url): ExtendedRedirectInfo {
 
     for (const pair of REDIRECT_MAP) {
         const knownPathname = pair[0];
-        const host = pair[1];
+        const newHost = pair[1];
 
         if (pathname.startsWith(knownPathname)) {
             const newPathname = pathname.substring(knownPathname.length - 1);
 
-            const reason = 'dev.w3.org has retired';
+            const reason = 'dev.w3.org' + knownPathname + ' now redirects ' + newHost;
             const redirectInfo: RedirectInfo = {
                 protocol: 'https:',
-                host: host,
+                host: newHost,
                 pathname: newPathname,
             }
 

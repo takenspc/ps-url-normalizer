@@ -26,13 +26,13 @@
   {
     "from": "http://webaudio.github.com/web-midi-api/",
     "to": "https://webaudio.github.io/web-midi-api/",
-    "reason": "Typo",
+    "reason": "fix typo",
     "enabled": true
   },
   {
     "from": "http://www.w3c-test.org/webperf/specs/ResourceTiming/",
     "to": "https://w3c.github.io/resource-timing/",
-    "reason": "Typo",
+    "reason": "fix typo",
     "enabled": true
   },
   {
@@ -68,19 +68,19 @@
   {
     "from": "https://github.com/slightlyoff/ServiceWorker/",
     "to": "https://slightlyoff.github.io/ServiceWorker/spec/service_worker/",
-    "reason": "Prefer github.io over github.com",
+    "reason": "prefer github.io over github.com",
     "enabled": true
   },
   {
     "from": "https://github.com/tc39/Array.prototype.includes",
     "to": "https://tc39.github.io/Array.prototype.includes/",
-    "reason": "Prefer github.io over github.com",
+    "reason": "prefer github.io over github.com",
     "enabled": true
   },
   {
     "from": "https://github.com/tc39/ecmascript_sharedmem",
     "to": "https://tc39.github.io/ecmascript_sharedmem/shmem.html",
-    "reason": "Prefer github.io over github.com",
+    "reason": "prefer github.io over github.com",
     "enabled": true
   },
   {
@@ -92,7 +92,7 @@
   {
     "from": "https://hg.fxtf.org/drafts/raw-file/tip/filters/Overview.html",
     "to": "https://drafts.fxtf.org/filters/",
-    "reason": "Prefer drafts.fxtf.org over hg.fxtf.org",
+    "reason": "prefer drafts.fxtf.org over hg.fxtf.org",
     "enabled": true
   },
   {
@@ -152,7 +152,7 @@
   {
     "from": "https://www.khronos.org/registry/typedarray/specs/latest/",
     "to": "https://tc39.github.io/ecma262/#sec-typedarray-objects",
-    "reason": "TypedArray is now  part of ECMA-262",
+    "reason": "TypedArray is now part of ECMA-262",
     "enabled": true
   },
   {
@@ -236,7 +236,7 @@
   {
     "from": "https://github.com/tc39/ecmascript_simd",
     "to": "https://tc39.github.io/ecmascript_simd/",
-    "reason": "Prefer github.io over github.com",
+    "reason": "prefer github.io over github.com",
     "enabled": true
   },
   {

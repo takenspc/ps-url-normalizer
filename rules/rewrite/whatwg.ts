@@ -44,7 +44,7 @@ function rewriteHTML(hash: string): RedirectInfo {
 }
 
 function createRedirectInfo(url: Url): ExtendedRedirectInfo {
-    const reason = 'Canonicalize HTML Standard https://html.spec.whatwg.org/multipage/';
+    const reason = 'use multipage version of HTML Standard https://html.spec.whatwg.org/multipage/';
     const redirectInfo: RedirectInfo = rewriteHTML(url.hash);
 
     if (!redirectInfo) {
