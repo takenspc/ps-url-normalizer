@@ -22,12 +22,8 @@ const HTML_FRAGMENT_DATA: Map<string, string> = (function() {
 
 function rewriteHTML(hash: string): RedirectInfo {
     if (!hash) {
-        return {
-            protocol: 'https:',
-            host: 'html.spec.whatwg.org',
-            pathname: '/multipage/',
-        };
-    }
+        return null;
+    } 
 
     const id = hash.substring(1);
     const html = HTML_FRAGMENT_DATA.get(id);
