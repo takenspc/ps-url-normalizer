@@ -57,7 +57,7 @@ function removeDefaultIndex(url: Url): ExtendedRedirectInfo {
 //
 // Rewrite
 //
-export async function normalize(url: Url): Promise<ExtendedRedirectInfo> {
+export function normalize(url: Url): Promise<ExtendedRedirectInfo> {
     const redirecters = [
         rewrite,
         removeDefaultIndex,

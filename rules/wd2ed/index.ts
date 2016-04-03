@@ -24,7 +24,7 @@ function wd2ed(url: Url): ExtendedRedirectInfo {
 //
 // WD2ED
 //
-export async function normalize(url: Url): Promise<ExtendedRedirectInfo> {
+export function normalize(url: Url): Promise<ExtendedRedirectInfo> {
     const redirecters = [
         wd2ed,
         w3c.wd2ed
