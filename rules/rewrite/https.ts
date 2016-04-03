@@ -9,9 +9,10 @@ import { RedirectInfo, ExtendedRedirectInfo } from '../';
 const HTTPS_HOSTS: string[] = [
     '.github.io',
     '.ietf.org',
-    '.w3.org',
-    '.xiph.org',
     '.khronos.org',
+    '.w3.org',
+    '.whatwg.org',
+    '.xiph.org',
 ];
 
 export function rewrite(url: Url): ExtendedRedirectInfo {
