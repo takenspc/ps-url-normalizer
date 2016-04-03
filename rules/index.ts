@@ -22,7 +22,7 @@ export interface ExtendedRedirectInfo {
 
 
 export interface URLInfo {
-    url: Url,
+    url: string,
     redirects: ExtendedRedirectInfo[],
 }
 
@@ -77,7 +77,7 @@ export async function normalize(url: Url): Promise<URLInfo> {
     } while (outerRedirected);
 
     return {
-        url: url,
+        url: format(url),
         redirects: redirects,
     };
 }
