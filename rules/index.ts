@@ -50,31 +50,38 @@ export async function normalize(url: Url): Promise<URLInfo> {
     let outerRedirected = false;
     let count = 0;
     const redirecters = [rewrite , wd2ed, redirect];
+
     do {
         outerRedirected = false;
         for (const redirecter of redirecters) {
             let innerRedirected = false;
             do {
                 const extRedirectInfo = await redirecter.normalize(url);
-                if (extRedirectInfo) {
-                    innerRedirected = handleRedirect(url, extRedirectInfo);
-                    if (innerRedirected) {
-                        extRedirectInfo.to = format(url);
-                        redirects.push(extRedirectInfo);
-                        outerRedirected = true;
-                    }
-                    count++;
-                    if (count > 10) {
-                        console.error(originalURLString, count);
-                        break;
-                    }
-                } else {
-                    innerRedirected = false;
+                // if a redirecter doesn't redirect the url, exit inner loop
+                if (!extRedirectInfo) {
+                    break;
                 }
+
+                innerRedirected = handleRedirect(url, extRedirectInfo);
+                if (innerRedirected) {
+                    extRedirectInfo.to = format(url);
+                    redirects.push(extRedirectInfo);
+                    // if one redirecter redirects the url, check another redirecters in outer loop
+                    outerRedirected = true;
+                }
+
+                // avoid inifenite loop
+                count++;
                 if (count > 10) {
+                    console.error(originalURLString, count);
                     break;
                 }
             } while (innerRedirected);
+
+            // avoid inifenite loop
+            if (count > 10) {
+                break;
+            }
         }
     } while (outerRedirected);
 
