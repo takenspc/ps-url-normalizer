@@ -66,7 +66,7 @@ export async function normalize(url: Url): Promise<URLInfo> {
                 if (innerRedirected) {
                     extRedirectInfo.to = format(url);
                     redirects.push(extRedirectInfo);
-                    // if one redirecter redirects the url, check another redirecters in outer loop
+                    // if a redirecter redirects the url, run other redirecters (outer loop)
                     outerRedirected = true;
                 }
 
