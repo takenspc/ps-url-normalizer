@@ -1,6 +1,12 @@
 'use strict';
 import * as url from 'url';
 import * as rules from './rules';
+import * as updater from './updater';
+
+
+export function update(): Promise<any> {
+    return updater.update();
+}
 
 
 export function normalizeWithRedirectInfo(urlString: string): Promise<rules.URLInfo> {
