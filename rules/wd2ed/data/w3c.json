@@ -5373,7 +5373,7 @@
         "authors": [
             "Tim Krauskopf",
             "Jim Miller",
-            "Pete Resnick",
+            "Paul Resnick",
             "Win Treese"
         ],
         "href": "http://www.w3.org/TR/PICS-labels/",
@@ -5387,7 +5387,7 @@
                 "authors": [
                     "Tim Krauskopf",
                     "Jim Miller",
-                    "Pete Resnick",
+                    "Paul Resnick",
                     "Win Treese"
                 ],
                 "href": "http://www.w3.org/TR/REC-PICS-labels-961031",
@@ -5402,7 +5402,7 @@
                 "authors": [
                     "Tim Krauskopf",
                     "Jim Miller",
-                    "Pete Resnick",
+                    "Paul Resnick",
                     "Win Treese"
                 ],
                 "href": "http://www.w3.org/TR/2009/REC-PICS-labels-20091124",
@@ -5418,7 +5418,7 @@
     "PICS-services": {
         "authors": [
             "Jim Miller",
-            "Pete Resnick",
+            "Paul Resnick",
             "David Singer"
         ],
         "href": "http://www.w3.org/TR/PICS-services/",
@@ -5431,7 +5431,7 @@
             "19961031": {
                 "authors": [
                     "Jim Miller",
-                    "Pete Resnick",
+                    "Paul Resnick",
                     "David Singer"
                 ],
                 "href": "http://www.w3.org/TR/REC-PICS-services-961031",
@@ -5445,7 +5445,7 @@
             "20091124": {
                 "authors": [
                     "Jim Miller",
-                    "Pete Resnick",
+                    "Paul Resnick",
                     "David Singer"
                 ],
                 "href": "http://www.w3.org/TR/2009/REC-PICS-services-20091124",
@@ -5463,7 +5463,7 @@
             "Christopher Evans",
             "Alex Hopmann",
             "Martin PreslerMarshall",
-            "Pete Resnick"
+            "Paul Resnick"
         ],
         "href": "http://www.w3.org/TR/PICSRules/",
         "title": "PICSRules 1.1 Specification",
@@ -5485,7 +5485,7 @@
                     "Christopher Evans",
                     "Alex Hopmann",
                     "Martin PreslerMarshall",
-                    "Pete Resnick"
+                    "Paul Resnick"
                 ],
                 "href": "http://www.w3.org/TR/REC-PICSRules-971229",
                 "title": "PICSRules 1.1 Specification",
@@ -5500,7 +5500,7 @@
                     "Christopher Evans",
                     "Alex Hopmann",
                     "Martin PreslerMarshall",
-                    "Pete Resnick"
+                    "Paul Resnick"
                 ],
                 "href": "http://www.w3.org/TR/2009/REC-PICSRules-20091124",
                 "title": "PICSRules 1.1 Specification",
@@ -10774,12 +10774,11 @@
     },
     "ambient-light": {
         "authors": [
-            "Doug Turner",
-            "Anssi Kostiainen"
+            "Tobie Langel"
         ],
         "href": "http://www.w3.org/TR/ambient-light/",
-        "title": "Ambient Light Events",
-        "rawDate": "2015-09-03",
+        "title": "Ambient Light Sensor",
+        "rawDate": "2016-03-29",
         "status": "WD",
         "publisher": "W3C",
         "deliveredBy": [
@@ -10845,6 +10844,20 @@
                 "href": "http://www.w3.org/TR/2015/WD-ambient-light-20150903/",
                 "title": "Ambient Light Events",
                 "rawDate": "2015-09-03",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/2009/dap/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160329": {
+                "authors": [
+                    "Tobie Langel"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-ambient-light-20160329/",
+                "title": "Ambient Light Sensor",
+                "rawDate": "2016-03-29",
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
@@ -10950,7 +10963,7 @@
         ],
         "href": "http://www.w3.org/TR/annotation-model/",
         "title": "Web Annotation Data Model",
-        "rawDate": "2015-10-15",
+        "rawDate": "2016-03-31",
         "status": "WD",
         "publisher": "W3C",
         "edDraft": "https://w3c.github.io/web-annotation/",
@@ -10989,6 +11002,22 @@
                     "http://www.w3.org/annotation/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160331": {
+                "authors": [
+                    "Robert Sanderson",
+                    "Paolo Ciccarese",
+                    "Benjamin Young"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-annotation-model-20160331/",
+                "title": "Web Annotation Data Model",
+                "rawDate": "2016-03-31",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/annotation/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
         }
     },
@@ -10998,10 +11027,10 @@
         ],
         "href": "http://www.w3.org/TR/annotation-protocol/",
         "title": "Web Annotation Protocol",
-        "rawDate": "2015-07-02",
+        "rawDate": "2016-03-31",
         "status": "WD",
         "publisher": "W3C",
-        "edDraft": "https://w3c.github.io/web-annotation/",
+        "edDraft": "https://w3c.github.io/web-annotation/protocol/wd/",
         "deliveredBy": [
             "http://www.w3.org/annotation/"
         ],
@@ -11014,6 +11043,55 @@
                 "href": "http://www.w3.org/TR/2015/WD-annotation-protocol-20150702/",
                 "title": "Web Annotation Protocol",
                 "rawDate": "2015-07-02",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/annotation/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160331": {
+                "authors": [
+                    "Robert Sanderson"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-annotation-protocol-20160331/",
+                "title": "Web Annotation Protocol",
+                "rawDate": "2016-03-31",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/annotation/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            }
+        }
+    },
+    "annotation-vocab": {
+        "authors": [
+            "Robert Sanderson",
+            "Paolo Ciccarese",
+            "Benjamin Young"
+        ],
+        "href": "http://www.w3.org/TR/annotation-vocab/",
+        "title": "Web Annotation Vocabulary",
+        "rawDate": "2016-03-31",
+        "status": "WD",
+        "publisher": "W3C",
+        "edDraft": "https://w3c.github.io/web-annotation/",
+        "deliveredBy": [
+            "http://www.w3.org/annotation/"
+        ],
+        "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
+        "versions": {
+            "20160331": {
+                "authors": [
+                    "Robert Sanderson",
+                    "Paolo Ciccarese",
+                    "Benjamin Young"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-annotation-vocab-20160331/",
+                "title": "Web Annotation Vocabulary",
+                "rawDate": "2016-03-31",
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
@@ -11212,7 +11290,7 @@
         ],
         "href": "http://www.w3.org/TR/appmanifest/",
         "title": "Web App Manifest",
-        "rawDate": "2016-03-22",
+        "rawDate": "2016-04-05",
         "status": "WD",
         "publisher": "W3C",
         "deliveredBy": [
@@ -11762,6 +11840,74 @@
                     "http://www.w3.org/WebPlatform/WG/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160324": {
+                "authors": [
+                    "Marcos Caceres",
+                    "Kenneth Christiansen",
+                    "Mounir Lamouri",
+                    "Anssi Kostiainen"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-appmanifest-20160324/",
+                "title": "Web App Manifest",
+                "rawDate": "2016-03-24",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/WebPlatform/WG/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160331": {
+                "authors": [
+                    "Marcos Caceres",
+                    "Kenneth Christiansen",
+                    "Mounir Lamouri",
+                    "Anssi Kostiainen"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-appmanifest-20160331/",
+                "title": "Web App Manifest",
+                "rawDate": "2016-03-31",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/WebPlatform/WG/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160404": {
+                "authors": [
+                    "Marcos Caceres",
+                    "Kenneth Christiansen",
+                    "Mounir Lamouri",
+                    "Anssi Kostiainen"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-appmanifest-20160404/",
+                "title": "Web App Manifest",
+                "rawDate": "2016-04-04",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/WebPlatform/WG/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160405": {
+                "authors": [
+                    "Marcos Caceres",
+                    "Kenneth Christiansen",
+                    "Mounir Lamouri",
+                    "Anssi Kostiainen"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-appmanifest-20160405/",
+                "title": "Web App Manifest",
+                "rawDate": "2016-04-05",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/WebPlatform/WG/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
         },
         "edDraft": "https://w3c.github.io/manifest/"
@@ -11917,8 +12063,8 @@
         "publisher": "W3C",
         "edDraft": "https://w3c.github.io/mediacapture-output/",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/04/webrtc/"
+            "http://www.w3.org/2011/04/webrtc/",
+            "http://www.w3.org/2009/dap/"
         ],
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "versions": {
@@ -11933,8 +12079,8 @@
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/04/webrtc/"
+                    "http://www.w3.org/2011/04/webrtc/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -12036,8 +12182,8 @@
         ],
         "href": "http://www.w3.org/TR/battery-status/",
         "title": "Battery Status API",
-        "rawDate": "2014-12-09",
-        "status": "CR",
+        "rawDate": "2016-03-29",
+        "status": "PR",
         "publisher": "W3C",
         "deliveredBy": [
             "http://www.w3.org/2009/dap/"
@@ -12112,9 +12258,24 @@
                     "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160329": {
+                "authors": [
+                    "Anssi Kostiainen",
+                    "Mounir Lamouri"
+                ],
+                "href": "http://www.w3.org/TR/2016/PR-battery-status-20160329/",
+                "title": "Battery Status API",
+                "rawDate": "2016-03-29",
+                "status": "PR",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/2009/dap/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
         },
-        "edDraft": "http://dvcs.w3.org/hg/dap/raw-file/default/battery/Overview.html"
+        "edDraft": "https://w3c.github.io/battery/"
     },
     "beacon": {
         "authors": [
@@ -12621,8 +12782,8 @@
         "status": "WD",
         "publisher": "W3C",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/04/webrtc/"
+            "http://www.w3.org/2011/04/webrtc/",
+            "http://www.w3.org/2009/dap/"
         ],
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "versions": {
@@ -12636,8 +12797,8 @@
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/04/webrtc/"
+                    "http://www.w3.org/2011/04/webrtc/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -13192,9 +13353,23 @@
                     "http://www.w3.org/WebPlatform/WG/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160403": {
+                "authors": [
+                    "Hallvord Steen"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-clipboard-apis-20160403/",
+                "title": "Clipboard API and events",
+                "rawDate": "2016-04-03",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/WebPlatform/WG/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
         },
-        "rawDate": "2016-03-11",
+        "rawDate": "2016-04-03",
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "edDraft": "https://w3c.github.io/clipboard-apis/"
     },
@@ -14215,7 +14390,7 @@
             "Elika Etemad",
             "Florian Rivoal"
         ],
-        "href": "https://www.w3.org/TR/css-2015/",
+        "href": "http://www.w3.org/TR/css-2015/",
         "title": "CSS Snapshot 2015",
         "rawDate": "2015-10-13",
         "status": "NOTE",
@@ -14699,7 +14874,7 @@
         ],
         "href": "http://www.w3.org/TR/css-device-adapt-1/",
         "title": "CSS Device Adaptation Module Level 1",
-        "rawDate": "2015-11-26",
+        "rawDate": "2016-03-29",
         "status": "WD",
         "publisher": "W3C",
         "edDraft": "https://drafts.csswg.org/css-device-adapt/",
@@ -14731,6 +14906,22 @@
                 "href": "http://www.w3.org/TR/2015/WD-css-device-adapt-1-20151126/",
                 "title": "CSS Device Adaptation Module Level 1",
                 "rawDate": "2015-11-26",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/Style/CSS/members"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160329": {
+                "authors": [
+                    "Rune Lillesveen",
+                    "Florian Rivoal",
+                    "Matt Rakow"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-css-device-adapt-1-20160329/",
+                "title": "CSS Device Adaptation Module Level 1",
+                "rawDate": "2016-03-29",
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
@@ -16262,10 +16453,10 @@
         ],
         "href": "http://www.w3.org/TR/css-snappoints-1/",
         "title": "CSS Scroll Snap Points Module Level 1",
-        "rawDate": "2015-03-26",
+        "rawDate": "2016-03-29",
         "status": "WD",
         "publisher": "W3C",
-        "edDraft": "http://dev.w3.org/csswg/css-snappoints/",
+        "edDraft": "https://drafts.csswg.org/css-snappoints/",
         "deliveredBy": [
             "http://www.w3.org/Style/CSS/members"
         ],
@@ -16279,6 +16470,21 @@
                 "href": "http://www.w3.org/TR/2015/WD-css-snappoints-1-20150326/",
                 "title": "CSS Scroll Snap Points Module Level 1",
                 "rawDate": "2015-03-26",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/Style/CSS/members"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160329": {
+                "authors": [
+                    "Matt Rakow",
+                    "Jacob Rossi"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-css-snappoints-1-20160329/",
+                "title": "CSS Scroll Snap Points Module Level 1",
+                "rawDate": "2016-03-29",
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
@@ -21723,7 +21929,7 @@
         ],
         "href": "http://www.w3.org/TR/encrypted-media/",
         "title": "Encrypted Media Extensions",
-        "rawDate": "2016-02-27",
+        "rawDate": "2016-04-04",
         "status": "WD",
         "publisher": "W3C",
         "deliveredBy": [
@@ -22078,6 +22284,91 @@
                 "href": "http://www.w3.org/TR/2016/WD-encrypted-media-20160227/",
                 "title": "Encrypted Media Extensions",
                 "rawDate": "2016-02-27",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/html/wg/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160325": {
+                "authors": [
+                    "David Dorwin",
+                    "Jerry Smith",
+                    "Mark Watson",
+                    "Adrian Bateman"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-encrypted-media-20160325/",
+                "title": "Encrypted Media Extensions",
+                "rawDate": "2016-03-25",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/html/wg/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160328": {
+                "authors": [
+                    "David Dorwin",
+                    "Jerry Smith",
+                    "Mark Watson",
+                    "Adrian Bateman"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-encrypted-media-20160328/",
+                "title": "Encrypted Media Extensions",
+                "rawDate": "2016-03-28",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/html/wg/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160329": {
+                "authors": [
+                    "David Dorwin",
+                    "Jerry Smith",
+                    "Mark Watson",
+                    "Adrian Bateman"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-encrypted-media-20160329/",
+                "title": "Encrypted Media Extensions",
+                "rawDate": "2016-03-29",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/html/wg/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160330": {
+                "authors": [
+                    "David Dorwin",
+                    "Jerry Smith",
+                    "Mark Watson",
+                    "Adrian Bateman"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-encrypted-media-20160330/",
+                "title": "Encrypted Media Extensions",
+                "rawDate": "2016-03-30",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/html/wg/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160404": {
+                "authors": [
+                    "David Dorwin",
+                    "Jerry Smith",
+                    "Mark Watson",
+                    "Adrian Bateman"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-encrypted-media-20160404/",
+                "title": "Encrypted Media Extensions",
+                "rawDate": "2016-04-04",
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
@@ -23747,12 +24038,11 @@
     },
     "generic-sensor": {
         "authors": [
-            "Tobie Langel",
-            "Rick Waldron"
+            "Tobie Langel"
         ],
         "href": "http://www.w3.org/TR/generic-sensor/",
         "title": "Generic Sensor API",
-        "rawDate": "2015-10-15",
+        "rawDate": "2016-03-24",
         "status": "WD",
         "publisher": "W3C",
         "edDraft": "https://w3c.github.io/sensors/",
@@ -23769,6 +24059,20 @@
                 "href": "http://www.w3.org/TR/2015/WD-generic-sensor-20151015/",
                 "title": "Generic Sensor API",
                 "rawDate": "2015-10-15",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/2009/dap/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160324": {
+                "authors": [
+                    "Tobie Langel"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-generic-sensor-20160324/",
+                "title": "Generic Sensor API",
+                "rawDate": "2016-03-24",
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
@@ -24581,8 +24885,8 @@
         "status": "NOTE",
         "publisher": "W3C",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/webtv/"
+            "http://www.w3.org/2011/webtv/",
+            "http://www.w3.org/2009/dap/"
         ],
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "versions": {
@@ -24596,8 +24900,8 @@
                 "status": "NOTE",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/webtv/"
+                    "http://www.w3.org/2011/webtv/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -27986,8 +28290,8 @@
         "status": "WD",
         "publisher": "W3C",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/04/webrtc/"
+            "http://www.w3.org/2011/04/webrtc/",
+            "http://www.w3.org/2009/dap/"
         ],
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "versions": {
@@ -28016,8 +28320,8 @@
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/04/webrtc/"
+                    "http://www.w3.org/2011/04/webrtc/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -28766,8 +29070,8 @@
         "status": "NOTE",
         "publisher": "W3C",
         "deliveredBy": [
-            "http://www.w3.org/International/core/",
-            "http://www.w3.org/Style/XSL/"
+            "http://www.w3.org/Style/XSL/",
+            "http://www.w3.org/International/core/"
         ],
         "versions": {
             "20080411": {
@@ -28813,8 +29117,8 @@
                 "status": "NOTE",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/International/core/",
-                    "http://www.w3.org/Style/XSL/"
+                    "http://www.w3.org/Style/XSL/",
+                    "http://www.w3.org/International/core/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -30719,8 +31023,8 @@
         "publisher": "W3C",
         "edDraft": "https://w3c.github.io/mediacapture-fromelement/",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/04/webrtc/"
+            "http://www.w3.org/2011/04/webrtc/",
+            "http://www.w3.org/2009/dap/"
         ],
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "versions": {
@@ -30734,8 +31038,8 @@
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/04/webrtc/"
+                    "http://www.w3.org/2011/04/webrtc/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -30753,8 +31057,8 @@
         "status": "LCWD",
         "publisher": "W3C",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/04/webrtc/"
+            "http://www.w3.org/2011/04/webrtc/",
+            "http://www.w3.org/2009/dap/"
         ],
         "versions": {
             "20120628": {
@@ -30830,8 +31134,8 @@
                 "status": "LCWD",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/04/webrtc/"
+                    "http://www.w3.org/2011/04/webrtc/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -31091,8 +31395,8 @@
         "status": "WD",
         "publisher": "W3C",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/04/webrtc/"
+            "http://www.w3.org/2011/04/webrtc/",
+            "http://www.w3.org/2009/dap/"
         ],
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "versions": {
@@ -31138,8 +31442,8 @@
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/04/webrtc/"
+                    "http://www.w3.org/2011/04/webrtc/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -43572,8 +43876,8 @@
         "publisher": "W3C",
         "edDraft": "https://w3c.github.io/mediacapture-screen-share/",
         "deliveredBy": [
-            "http://www.w3.org/2009/dap/",
-            "http://www.w3.org/2011/04/webrtc/"
+            "http://www.w3.org/2011/04/webrtc/",
+            "http://www.w3.org/2009/dap/"
         ],
         "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf",
         "versions": {
@@ -43588,8 +43892,8 @@
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
-                    "http://www.w3.org/2009/dap/",
-                    "http://www.w3.org/2011/04/webrtc/"
+                    "http://www.w3.org/2011/04/webrtc/",
+                    "http://www.w3.org/2009/dap/"
                 ],
                 "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
             }
@@ -53783,8 +54087,8 @@
         ],
         "href": "http://www.w3.org/TR/webcrypto-key-discovery/",
         "title": "WebCrypto Key Discovery",
-        "rawDate": "2013-08-22",
-        "status": "WD",
+        "rawDate": "2016-03-29",
+        "status": "NOTE",
         "publisher": "W3C",
         "deliveredBy": [
             "http://www.w3.org/2012/webcrypto/"
@@ -53813,6 +54117,20 @@
                 "title": "WebCrypto Key Discovery",
                 "rawDate": "2013-08-22",
                 "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/2012/webcrypto/"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160329": {
+                "authors": [
+                    "Mark Watson"
+                ],
+                "href": "http://www.w3.org/TR/2016/NOTE-webcrypto-key-discovery-20160329/",
+                "title": "WebCrypto Key Discovery",
+                "rawDate": "2016-03-29",
+                "status": "NOTE",
                 "publisher": "W3C",
                 "deliveredBy": [
                     "http://www.w3.org/2012/webcrypto/"
@@ -54183,7 +54501,7 @@
         ],
         "href": "http://www.w3.org/TR/webmention/",
         "title": "Webmention",
-        "rawDate": "2016-03-01",
+        "rawDate": "2016-03-29",
         "status": "WD",
         "publisher": "W3C",
         "edDraft": "http://webmention.net/draft/",
@@ -54213,6 +54531,20 @@
                 "href": "http://www.w3.org/TR/2016/WD-webmention-20160301/",
                 "title": "Webmention",
                 "rawDate": "2016-03-01",
+                "status": "WD",
+                "publisher": "W3C",
+                "deliveredBy": [
+                    "http://www.w3.org/Social/WG"
+                ],
+                "source": "http://www.w3.org/2002/01/tr-automation/tr.rdf"
+            },
+            "20160329": {
+                "authors": [
+                    "Aaron Parecki"
+                ],
+                "href": "http://www.w3.org/TR/2016/WD-webmention-20160329/",
+                "title": "Webmention",
+                "rawDate": "2016-03-29",
                 "status": "WD",
                 "publisher": "W3C",
                 "deliveredBy": [
