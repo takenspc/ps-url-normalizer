@@ -65,7 +65,8 @@ export function redirect(urlString: string): Promise<string> {
 
         parser.on('error', (err) => {
             console.error(urlString, 'parse error');
-            reject(err);
+            // reject
+            resolve(null);
         });
 
         parser.on('end', () => {
@@ -81,7 +82,8 @@ export function redirect(urlString: string): Promise<string> {
             },
         }).on('error', (err) => {
             console.error(urlString, 'network error');
-            reject(err);
+            // reject
+            resolve(null);
         }).pipe(parser);
     });
 }
