@@ -80,13 +80,12 @@ export function rewrite(url: Url): ExtendedRedirectInfo {
     const host = url.host;
     const pathname = url.pathname;
 
-    for (const pair of HTML_HOST_MAP) {
-        const expectedHost = pair[0];
+    for (const [expectedHost, expectedPaths] of HTML_HOST_MAP) {
         if (expectedHost !== host) {
             continue;
         }
 
-        for (const expectedPath of pair[1]) {
+        for (const expectedPath of expectedPaths) {
             if (expectedPath.endsWith('*')) {
                 const pathPrefix = expectedPath.substring(0, expectedPath.length - 1);
                 if (pathname.startsWith(pathPrefix)) {

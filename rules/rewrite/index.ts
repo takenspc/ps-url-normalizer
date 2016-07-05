@@ -14,7 +14,7 @@ import * as whatwg from './whatwg';
 // Manual
 //
 const MANUAL_RAW_DATA: ManualRedirectEntry[] = (function() {
-    const jsonPath: string = path.join(__dirname, 'data', 'manual.json');
+    const jsonPath = path.join(__dirname, 'data', 'manual.json');
     const rawData = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
     return rawData;
 })();

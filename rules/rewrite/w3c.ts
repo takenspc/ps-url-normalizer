@@ -14,10 +14,7 @@ const REDIRECT_MAP: Map<string, string> = new Map([
 function rewriteDevW3Org(url: Url): ExtendedRedirectInfo {
     const pathname = url.pathname;
 
-    for (const pair of REDIRECT_MAP) {
-        const knownPathname = pair[0];
-        const newHost = pair[1];
-
+    for (const [knownPathname, newHost] of REDIRECT_MAP) {
         if (pathname.startsWith(knownPathname)) {
             const newPathname = pathname.substring(knownPathname.length - 1);
 
