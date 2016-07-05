@@ -1,33 +1,40 @@
-import * as assert from 'power-assert';
-import * as normalizer from '../';
-
+import { testUrls } from './helper';
 
 describe('w3c', () => {
-    it('should leave search of url as it is', () => {
-        const url = 'https://www.w3.org/Bugs/Public/show_bug.cgi?id=28553';
-        assert(normalizer.normalize(url) === url);
+    it('should leave search params of url as it is', (done) => {
+        const urls = [
+            'https://www.w3.org/Bugs/Public/show_bug.cgi?id=28553'
+        ];
+        
+        const expected = urls[0];
+
+        testUrls(urls, expected, done);
     });
 
-    it('should normalize protocol', () => {
-        const url = 'http://www.w3.org/TR/CSS/';
-        const actual = normalizer.normalize(url);
+    it('should normalize protocol', (done) => {
+        const urls = [
+            'http://www.w3.org/TR/CSS/'
+        ];
         const expected = 'https://www.w3.org/TR/CSS/';
-        assert(actual === expected);
+
+        testUrls(urls, expected, done);
     });
 
-    it('should normalize old HTML drafts', () => {
-        {
-            const url = 'https://www.w3.org/html/wg/drafts/html/CR/';
-            const actual = normalizer.normalize(url);
-            const expected = 'https://html.spec.whatwg.org/multipage/';
-            assert(actual === expected);
-        }
+    it('should normalize old HTML drafts', (done) => {
+        const urls = [
+            'https://www.w3.org/html/wg/drafts/html/CR/',
+        ];
+        const expected = 'https://w3c.github.io/html/html/CR/';
 
-        {
-            const url = 'https://www.w3.org/html/wg/drafts/html/master/browsers.html#offline';
-            const actual = normalizer.normalize(url);
-            const expected = 'https://html.spec.whatwg.org/multipage/browsers.html#offline';
-            assert(actual === expected);
-        }
+        testUrls(urls, expected, done);
+    });
+
+    it('should normalize old HTML drafts', (done) => {
+        const urls = [
+            'https://www.w3.org/html/wg/drafts/html/master/browsers.html#offline',
+        ];
+
+        const expected = 'https://w3c.github.io/html/browsers.html#offline';
+        testUrls(urls, expected, done);
     });
 });

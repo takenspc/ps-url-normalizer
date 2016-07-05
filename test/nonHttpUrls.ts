@@ -1,9 +1,7 @@
-import * as assert from 'power-assert';
-import * as normalizer from '../';
-
+import { testUrls } from './helper';
 
 describe('index', () => {
-    it('should leave non http urls as they are', () => {
+    it('should leave non http urls as they are', (done) => {
         const urls = [
             'javascript:void(0)',
             'mailto:example@example.com',
@@ -11,9 +9,6 @@ describe('index', () => {
             'blob:https://whatwg.org/d0360e2f-caee-469f-9a2f-87d5b0456f6f',
         ];
 
-        for (let i = 0; i < urls.length; i++) {
-            const url = urls[i];
-            assert(normalizer.normalize(url) === url);
-        }
+        testUrls(urls, urls, done);
     });
 });

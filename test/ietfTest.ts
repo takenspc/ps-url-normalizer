@@ -1,9 +1,7 @@
-import * as assert from 'power-assert';
-import * as normalizer from '../';
+import { testUrls } from './helper';
 
-//
 describe('ietf', () => {
-    it('should normalize urls of RFCs', () => {
+    it('should normalize urls of RFCs', (done) => {
         const urls = [
             'http://www.ietf.org/rfc/rfc6066',
             'http://www.ietf.org/rfc/rfc6066.txt',
@@ -15,13 +13,10 @@ describe('ietf', () => {
 
         const expected = 'https://tools.ietf.org/html/rfc6066';
 
-        for (let i = 0; i < urls.length; i++) {
-            const actual = normalizer.normalize(urls[i]);
-            assert(actual === expected);
-        }
+        testUrls(urls, expected, done);
     });
 
-    it('should normalize urls of draft RFCs', () => {
+    it('should normalize urls of draft RFCs', (done) => {
         const urls = [
             'http://www.ietf.org/internet-drafts/draft-ietf-httpbis-client-hints',
             'http://www.ietf.org/internet-drafts/draft-ietf-httpbis-client-hints.txt',
@@ -39,9 +34,6 @@ describe('ietf', () => {
 
         const expected = 'https://tools.ietf.org/html/draft-ietf-httpbis-client-hints';
 
-        for (let i = 0; i < urls.length; i++) {
-            const actual = normalizer.normalize(urls[i]);
-            assert(actual === expected);
-        }
+        testUrls(urls, expected, done);
     });
 });

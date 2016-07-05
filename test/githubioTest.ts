@@ -1,28 +1,29 @@
-import * as assert from 'power-assert';
-import * as normalizer from '../';
+import { testUrls } from './helper';
 
-//
 describe('github.io', () => {
-    it('should normalize protocol', () => {
-        const httpURL = 'http://tc39.github.io/Array.prototype.includes/';
-        const actual = normalizer.normalize(httpURL);
+    it('should normalize protocol', (done) => {
+        const urls = [
+            'http://tc39.github.io/Array.prototype.includes/'
+        ];
         const expected = 'https://tc39.github.io/Array.prototype.includes/';
-        assert(actual === expected);
+        testUrls(urls, expected, done);
     });
 
-    it('should normalize urls of default index', () => {
-        const oldURL = 'https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html';
-        const normalizedURL = 'https://slightlyoff.github.io/ServiceWorker/spec/service_worker/';
+    it('should normalize urls with default index', (done) => {
+        const urls = [
+            'https://slightlyoff.github.io/ServiceWorker/spec/service_worker/index.html'
+        ];
+        const expected = 'https://slightlyoff.github.io/ServiceWorker/spec/service_worker/';
 
-        const actual = normalizer.normalize(oldURL);
-        assert(actual === normalizedURL);
+        testUrls(urls, expected, done);
     });
 
-    it('should normalize urls of single directory', () => {
-        const oldURL = 'https://w3c.github.io/mediacapture-output';
-        const normalizedURL = 'https://w3c.github.io/mediacapture-output/';
+    it('should normalize urls with slashless directory', (done) => {
+        const urls = [
+            'https://w3c.github.io/mediacapture-output'
+        ];
+        const expected = 'https://w3c.github.io/mediacapture-output/';
 
-        const actual = normalizer.normalize(oldURL);
-        assert(actual === normalizedURL);
+        testUrls(urls, expected, done);
     });
 });

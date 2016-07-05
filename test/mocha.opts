@@ -1,1 +1,1 @@
---compilers ts:espower-typescript/guess
+--timeout 5000 --compilers ts:espower-typescript/guess test/**/*.ts
