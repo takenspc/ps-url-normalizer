@@ -1,10 +1,9 @@
-'use strict';
 import * as url from 'url';
 import * as rules from './rules';
 import * as updater from './updater';
 
 
-export function update(): Promise<any> {
+export function update(): Promise<void> {
     return updater.update();
 }
 

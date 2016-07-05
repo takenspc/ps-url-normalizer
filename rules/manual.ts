@@ -1,4 +1,3 @@
-'use strict';
 import { Url, parse } from 'url';
 import { RedirectInfo, ExtendedRedirectInfo } from './';
 import { url2RedirectInfo } from './utils';

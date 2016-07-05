@@ -1,4 +1,3 @@
-'use strict';
 import * as urlModule from 'url';
 import * as request from 'request';
 import { Cache } from './cache';

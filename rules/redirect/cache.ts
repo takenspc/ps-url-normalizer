@@ -1,5 +1,3 @@
-'use strict'; // XXX
-
 class CacheEntry<T> {
     datetime: number
     value: T

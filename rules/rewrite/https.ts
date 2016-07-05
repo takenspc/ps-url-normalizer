@@ -1,4 +1,3 @@
-'use strict'; // XXX
 import { Url } from 'url';
 import { RedirectInfo, ExtendedRedirectInfo } from '../';
 

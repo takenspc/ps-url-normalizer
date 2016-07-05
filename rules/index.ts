@@ -1,4 +1,3 @@
-'use strict'; // XXX
 import { Url, format } from 'url';
 import * as rewrite from './rewrite';
 import * as redirect from './redirect';
