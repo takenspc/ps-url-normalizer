@@ -6,13 +6,25 @@
         "enabled": true
     },
     {
+        "from": "http://www.ecma-international.org/ecma-262/7.0/",
+        "to": "https://tc39.github.io/ecma262/",
+        "reason": "Editors Draft of ECMA-262 is https://tc39.github.io/ecma262/",
+        "enabled": true
+    },
+    {
         "from": "http://www.ecma-international.org/ecma-402/1.0/",
         "to": "https://tc39.github.io/ecma402/",
         "reason": "Editors Draft of ECMA-402 is https://tc39.github.io/ecma402/",
         "enabled": true
     },
     {
-        "from": "http://www.ecma-international.org/publications/standards/Ecma-402.htm",
+        "from": "http://www.ecma-international.org/ecma-402/2.0/",
+        "to": "https://tc39.github.io/ecma402/",
+        "reason": "Editors Draft of ECMA-402 is https://tc39.github.io/ecma402/",
+        "enabled": true
+    },
+    {
+        "from": "http://www.ecma-international.org/ecma-402/3.0/",
         "to": "https://tc39.github.io/ecma402/",
         "reason": "Editors Draft of ECMA-402 is https://tc39.github.io/ecma402/",
         "enabled": true

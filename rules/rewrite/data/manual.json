@@ -244,5 +244,11 @@
     "to": "https://tc39.github.io/ecma262/#sec-exp-operator",
     "reason": "Exponentiation Operator is now part of ECMA-262. See https://github.com/tc39/ecma262/pull/318",
     "enabled": true
+  },
+  {
+    "from": "http://www.ecma-international.org/publications/standards/Ecma-402.htm",
+    "to": "http://www.ecma-international.org/ecma-402/3.0/",
+    "reason": "prefer specification HTML page over index page",
+    "enabled": true
   }
 ]
